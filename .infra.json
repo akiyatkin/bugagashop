@@ -1,0 +1,16 @@
+{
+	"dependencies":["cart"],
+	"clutch":{
+		"catalog":["vendor/akiyatkin/bugagashop/"],
+		"controller":["vendor/akiyatkin/bugagashop/"],
+		"load":["vendor/akiyatkin/bugagashop/"],
+		"showcase":["vendor/akiyatkin/bugagashop/"],
+		"ydisk":["vendor/akiyatkin/bugagashop/"],
+		"rubrics":["vendor/akiyatkin/bugagashop/"],
+		"path":["vendor/akiyatkin/bugagashop/"],
+		"ascroll":["vendor/akiyatkin/bugagashop/"]
+	},
+	"css":[
+		"style.css"
+	]
+}

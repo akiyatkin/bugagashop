@@ -1,0 +1,28 @@
+{
+	"sync":{
+		"events": {
+			"ysrc":"/data/events/",
+			"site":"~auto/events/"
+		},
+		"texts": {
+			"ysrc":"/data/texts/",
+			"site":"~auto/texts/"
+		},
+		"pages": {
+			"ysrc":"/data/pages/",
+			"site":"~auto/pages/"
+		},
+		"prices": {
+			"ysrc":"/data/prices/",
+			"site":"~auto/.prices/"
+		},
+		"slides": {
+			"ysrc":"/data/slides/",
+			"site":"~auto/slides/"
+		},
+		"tables": {
+			"ysrc":"/data/tables/",
+			"site":"~auto/tables/"
+		}
+	}
+}

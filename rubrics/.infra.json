@@ -1,0 +1,14 @@
+{
+	"list":{
+		"pages":{
+			"title":"Информация",
+			"type":"info",
+			"dir":"~auto/pages/"
+		},
+		"events":{
+			"title":"События",
+			"type":"list",
+			"dir":"~auto/events/"
+		}
+	}
+}

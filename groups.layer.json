@@ -1,0 +1,13 @@
+{
+	"tpl":"-bugagashop/layout.tpl",
+	"activelink":true,
+	"tplroot":"GROUPS",
+	"divs":{
+		"ALLGROUPS":{
+			"tplroot":"GROUPS",
+			"activelink":true,
+			"tpl":"-catalog/groups/layout.tpl",
+			"jsontpl":"-showcase/api/groups?val={~encode(crumb.child.child.name)}&m={~encode(Crumb.get.m)}&art={~encode(crumb.child.child.child.name)}"
+		}
+	}
+}

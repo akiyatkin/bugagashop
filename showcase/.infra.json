@@ -1,0 +1,14 @@
+{
+	"images":"~images/",
+	"icons":"~images/",
+	"prices":"~auto/.prices/",
+	"groups":"~auto/texts/",
+	"texts":"~auto/texts/",
+	"tables":"~auto/tables/",
+
+	"ignorelistname":true,
+	"cleanname":false,
+	"Группы уникальны":true,
+	"jsonoptions":"~auto/.prices/showcase.json",
+	"phpoptions":"~auto/.prices/showcase.php"
+}

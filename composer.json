@@ -1,0 +1,32 @@
+{
+	"name":"akiyatkin/bugagashop",
+	"require":{
+		"infrajs/controller":"~1",
+		"infrajs/router":"~1",
+		"infrajs/contacts":"~1",
+		"infrajs/layer-seojson":"~1",
+		"infrajs/collect":"~1",
+		"infrajs/layer-showanimate":"~1",
+		"infrajs/imager":"~1",
+		"infrajs/rubrics":"~1",
+		"infrajs/ascroll":"~1",
+		"infrajs/activelink":"~1",
+		"infrajs/layer-autosave":"~1",
+		"infrajs/layer-autofocus":"~1",
+		"infrajs/layer-css":"~1",
+		"infrajs/layer-deep":"~1",
+		"infrajs/env":"~1",
+		"infrajs/cart":"~1",
+		"infrajs/checkversion":"~1",
+		"infrajs/catalog":"~1",
+		"infrajs/user":"~1",
+		"infrajs/path":"~1",
+		"infrajs/template":"~1",
+		"akiyatkin/ydisk":"~1",
+		"akiyatkin/imagetext":"~1",
+		"akiyatkin/seo":"~1",
+		"akiyatkin/showcase":"~1",
+		"akiyatkin/load":"~1",
+		"narical/grayscale":"~1"
+	}
+}
