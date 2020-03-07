@@ -43,7 +43,7 @@
 		</style>
 		<div class="container d-flex align-items-stretch">
 			<a class="py-3 pr-3 d-flex align-items-center" href="/">
-				<img src="/-imager/?&w=80&src=~index/logo-short.png">
+				<img src="/-imager/?&w=80&src=-images/logo-short.png">
 			</a>
 			<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
 				<a class="text-nowrap d-block d-md-none" 
