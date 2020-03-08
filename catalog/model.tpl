@@ -58,7 +58,7 @@
 			color:white;
 		}
 		#{div} .model .cart-basket {
-			margin-top:-39px;
+			margin-top:-33px;
 			opacity: 0;
 		}
 		#{div} .model:hover .cart-basket {
@@ -70,11 +70,11 @@
 			position: relative;
 			z-index:2;
 			background-color: white;
-			margin-bottom:-39px;
+			margin-bottom:-33px;
 		}
 		
 		@media (max-width:768px) {
-			#{div} .model {
+			#{div} .model:hover {
 				margin-bottom:0px;
 			}
 			#{div} .model .cart-basket {
@@ -113,7 +113,7 @@
 {CARDS-data:}
 	{images.0?:CARDS-image}
 	{:CARDS-basket}
-	<div class="p-2">
+	<div class="px-2 pb-2">
 		{:CARDS-name}
 		{:CARDS-props}
 	</div>
@@ -131,7 +131,7 @@
 		<div class="d-flex justify-content-between align-items-end"><b class="cost {Наличие=:strАкция?:strred}">{~cost(Цена)}{:unit}</b> {Старая цена:oldcost}</div>
 		{oldcost:}<span class="text-muted" title="Старая цена"><s>{~cost(.)}{:unit}</s></span>
 {CARDS-basket:}
-	<div style="background-color:var(--black)" class="cart-basket">
+	<div style="background-color:var(--black); text-align:center" class="cart-basket">
 		{min?(show?:showonecost?:showitemscost)?(~length(items)?:showitemonecost?(Цена?:showonecost?:shownocost))}
 	</div>
 	{showonecost:}
