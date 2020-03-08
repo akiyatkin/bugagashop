@@ -1,11 +1,11 @@
 {
 	"global":"user",
-	"jsontpl":"-showcase/api/search/?val=actions&p={config.page}&m=:count={config.count}",
+	"jsontpl":"-showcase/api/search/?val=actions&p={config.page}&count={config.count}",
 	"tpl":"-catalog/model.tpl",
 	"divcheck":true,
 	"showanimate":true,
 	"config":{
-		"count":3,
+		"count":12,
 		"page":1
 	},
 	"dataroot":"data.list",

@@ -1,0 +1,25 @@
+{
+	"divs":{
+		"MAINFILTERS":{
+			"istpl2":"{crumb.child.name=:catalog?:yes}",
+			"divcheck":true,
+			"showanimate":false,
+			"jsontpl":"-showcase/api/filters?val={crumb.child=:catalog?~encode(crumb.child.child.name)}&m={~encode(Crumb.get.m)}",
+			"tpl":"-catalog/filters.tpl",
+			"onlyclient":false
+		},
+		"BIGACTION":{
+			"divcheck":true,
+			"showanimate":false,
+			"parsedtpl":"{Crumb.get.m}",
+			"json":"-excel/get/group/Главная/?src=~auto/pages/Параметры.xlsx",
+			"dataroot":"data.data.descr",
+			"tpl":"-bugagashop/layout.tpl",
+			"tplroot":"BIGACTION"
+		},
+		"GROUPS":{
+			"istpl2":"{crumb.child.name=:catalog?:yes}",
+			"external":"-bugagashop/groups.layer.json"
+		}
+	}
+}

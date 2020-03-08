@@ -314,13 +314,13 @@
 	<div class="row">
 		<style>
 			@media (max-width:991px) {
+				/* Колонка скрывается только на мобильных, только на странице позиции */
 				#{div} .column-yes {
 					display: block!important;
 				}
 			}
 		</style>
 		<div class="col-lg-3 d-none d-lg-block column-{~parse(~array(parsedtpl))}">
-			
 			<div id="MAINFILTERS"></div>
 			<div id="BIGACTION"></div>
 			<div id="GROUPS" class="mb-3"></div>
@@ -382,106 +382,107 @@
 		<div class="col-lg-9">
 			<div id="SLIDES"></div>
 			<section id="PRODUCERS" class="my-4"></section>
-			<h1>Автозапчасти на акции</h1>
-			<p>Низкая цена, доставка из Тольятти.</p>
-			<section id="ACTIONS"></section>
-			<div id="more"></div>
-			<div class="text-center">
-				<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
-			</div>
-			<script async type="module">
-				(async () => {
-					let btn = document.getElementById('morebtn');
-					let p = 0;
-					btn.addEventListener('click', async () => {
-						if (btn.classList.contains('active')) {
-							Crumb.go('/catalog');
-							return;
-						}
-						p++;
-						let L = (await import('/vendor/akiyatkin/load/Load.js')).default;
-						let Wait = await L.on('import-default', '/vendor/akiyatkin/load/Wait.js')
-						await Wait();
-						
-						let id = 'ACTIONS';
-						if (p != 1) {
-							let div = document.getElementById('more');
-							let n = document.createElement('div');
-							id = 'addmore'+p;
-							n.id = id;
-							div.appendChild(n);
-						}
-						let count = 24;
-						let layer = {
-							"div":id,
-							"divparent":"CONTENT",
-							"istpl":"{:q1}~sum(counter,:-1){:q2}",
-							"config":{
-								"page":p,
-								"count":count
-							},
-							"external":"-actions.layer.json"
-						};
-						Event.one('Layer.onshow', () => {
-							let data = Load.loadJSON(layer.json);
-							if (data.count<count) {
-								btn.innerHTML = "Перейти в каталог";
-								btn.classList.add('active');
-							}
-						}, '', layer);
-						Controller.checkAdd(layer);
-						Controller.check();
-					});
-
-					
-				})();
-			</script>
+			{Заголовок}
+			<section id="MAINBODY"></section>
 			<section id="NEWS"></section>
 		</div>
 	</div>
-	{q1:}{
-	{q2:}}
-	{NEWS:}
-		<style>
-			#{div} .link {
-				position: relative;
-				display: block;
-			}
+	{MAINBODY:}
+		<section id="ACTIONS"></section>
+		<div id="more"></div>
+		<div class="text-center">
+			<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
+		</div>
+		<script async type="module">
+			(async () => {
+				let btn = document.getElementById('morebtn');
+				let p = 0;
+				btn.addEventListener('click', async () => {
+					if (btn.classList.contains('active')) {
+						Crumb.go('/catalog');
+						return;
+					}
+					p++;
+					let L = (await import('/vendor/akiyatkin/load/Load.js')).default;
+					let Wait = await L.on('import-default', '/vendor/akiyatkin/load/Wait.js')
+					await Wait();
+					
+					let id = 'ACTIONS';
+					if (p != 1) {
+						let div = document.getElementById('more');
+						let n = document.createElement('div');
+						id = 'addmore'+p;
+						n.id = id;
+						div.appendChild(n);
+					}
+					let count = 24;
+					let layer = {
+						"div":id,
+						"divparent":"CONTENT",
+						"istpl":"{:q1}~sum(counter,:-1){:q2}",
+						"config":{
+							"page":p,
+							"count":count
+						},
+						"external":"-bugagashop/actions.layer.json"
+					};
+					Event.one('Layer.onshow', () => {
+						let data = Load.loadJSON(layer.json);
+						if (data.count < count) {
+							btn.innerHTML = "Перейти в каталог";
+							btn.classList.add('active');
+						}
+					}, '', layer);
+					Controller.checkAdd(layer);
+					Controller.check();
+				});
+
+				
+			})();
+		</script>
+		{q1:}{
+		{q2:}}
+{NEWS:}
+	<style>
+		#{div} .link {
+			position: relative;
+			display: block;
+		}
+		#{div} .hover {
+			opacity: 0;
+			transition-duration: .5s;
+			position: absolute;
+				margin:auto;
+			top: 0; left: 0; bottom: 0; right: 0;
+			padding-bottom:20px;
+		}
+		#{div} .link:hover .hover {
+			opacity: 1;
+			padding-bottom:0px;
+		}
+		@media (max-width:768px) {
 			#{div} .hover {
-				opacity: 0;
-				transition-duration: .5s;
-				position: absolute;
-  				margin:auto;
-				top: 0; left: 0; bottom: 0; right: 0;
-				padding-bottom:20px;
-			}
-			#{div} .link:hover .hover {
 				opacity: 1;
 				padding-bottom:0px;
 			}
-			@media (max-width:768px) {
-				#{div} .hover {
-					opacity: 1;
-					padding-bottom:0px;
-				}
-			}
-		</style>
-		<a href="/events" class="h1 mb-0" style="color:var(--main)">Новости</a>
-		<div class="row">
-			{data.list::nitem}
+		}
+	</style>
+	<a href="/events" class="h1 mb-0" style="color:var(--main)">Новости</a>
+	<div class="row">
+		{data.list::nitem}
+	</div>
+	{nitem:}
+		<div class="col-sm-6 mb-3">
+			<a class="link" href="/events/{name}" style="color:inherit; text-decoration: none">
+				<div>
+					<div style="font-size:12px" class="mb-1 text-muted text-right">{~date(:d/m/Y,date)}</div>
+					<p><img class="img-fluid" src="/-imager/?src={images.0.src}&w=600&h=200&crop=1&top=1"></p>
+					<p class="h2 font-weight-bold">{heading}</p>
+				</div>
+				<div class="hover d-flex justify-content-center align-items-center"><div class="btn btn-primary">Читать</div></div>
+			</a>
+			{preview}
 		</div>
-		{nitem:}
-			<div class="col-sm-6 mb-3">
-				<a class="link" href="/events/{name}" style="color:inherit; text-decoration: none">
-					<div>
-						<div style="font-size:12px" class="mb-1 text-muted text-right">{~date(:d/m/Y,date)}</div>
-						<p><img class="img-fluid" src="/-imager/?src={images.0.src}&w=600&h=200&crop=1&top=1"></p>
-						<p class="h2 font-weight-bold">{heading}</p>
-					</div>
-					<div class="hover d-flex justify-content-center align-items-center"><div class="btn btn-primary">Читать</div></div>
-				</a>
-				{preview}
-			</div>
 {BIGACTION:}
 	{Акция?:bigactionshow}
 	{bigactionshow:}
@@ -619,7 +620,7 @@
 	{slide:}
 		<div 
 			class="carousel-item px-5 pt-3 {~first()?:active} d-flex align-items-stretch flex-column justify-content-between" 
-			style="padding-bottom:50px; background-image: url('/-imager/?w=1992&h=800&crop=1&src=~auto/slides/{file}')">
+			style="padding-bottom:50px; background-position:center; background-image: url('/-imager/?w=1992&h=800&crop=1&src=~auto/slides/{file}')">
 			{src?:slidecaption}
 		</div>
 	{slidecaption:}

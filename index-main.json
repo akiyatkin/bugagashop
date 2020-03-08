@@ -1,6 +1,8 @@
 {
 	"tpl":"-bugagashop/layout.tpl",
 	"tplroot":"MAIN",
+	"json":"-excel/get/group/Главная/?src=~auto/pages/Параметры.xlsx",
+	"dataroot":"data.data.descr",
 	"divs":{
 		"MAINFILTERS":{
 			"jsontpl":"-showcase/api/filters?val=&m={~encode(Crumb.get.m)}",
@@ -17,8 +19,14 @@
 			"tpl":"-bugagashop/layout.tpl",
 			"tplroot":"BIGACTION"
 		},
-		"ACTIONS":{
-			"external":"-bugagashop/actions.layer.json"
+		"MAINBODY":{
+			"tpl":"-bugagashop/layout.tpl",
+			"tplroot":"MAINBODY",
+			"divs":{
+				"ACTIONS":{
+					"external":"-bugagashop/actions.layer.json"
+				}
+			}	
 		},
 		"NEWS":{
 			"tpl":"-bugagashop/layout.tpl",

@@ -91,7 +91,7 @@
 {CARDS-image:}
 	{Наличие=:strАкция?:conner}
 	<a href="{:link-pos}">
-		<img class="img-fluid" src="/-imager/?m=1&amp;w=525&amp;src={images.0}" />
+		<img class="img-fluid" src="/-imager/?m=1&amp;w=528&amp;h=528&amp;crop=1&amp;src={images.0}" />
 	</a>
 	{strАкция:}Акция
 	{conner:}
