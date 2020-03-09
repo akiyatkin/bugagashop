@@ -130,6 +130,8 @@
 				color:#999999;
 			}
 			footer .heading {
+				display: block;
+				text-decoration: none;
 				padding-bottom:3px;
 				margin-bottom:6px;
 				font-size:14px;
@@ -200,7 +202,7 @@
 				
 				</div>
 				<div class="col-sm-6 col-lg-3 mb-3">
-					<div class="heading">Каталог</div>
+					<a href="/catalog" class="heading">Каталог</a>
 					<div id="FOOTGROUPS"></div>
 				</div>
 				<div class="col-sm-6 col-lg-3 mb-3">
@@ -352,7 +354,7 @@
 		</style>
 		<div class="bg-primary card-header d-flex justify-content-between">
 			<div class="flex-grow-1 d-flex align-items-center">
-				<b>Каталог товаров</b>
+				<a style="color:inherit" href="/catalog"><b>Каталог товаров</b></a>
 			</div>
 			<div style="font-size:150%; line-height: 100%; margin-bottom: -2px; margin-top: -2px; ">
 				<i class="fas fa-bars"></i>

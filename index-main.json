@@ -5,10 +5,12 @@
 	"dataroot":"data.data.descr",
 	"divs":{
 		"MAINFILTERS":{
+			"external":"-catalog/filters.layer.json",
 			"jsontpl":"-showcase/api/filters?val=&m={~encode(Crumb.get.m)}",
-			"tpl":"-catalog/filters.tpl",
-			"showanimate":false,
-			"onlyclient":false
+			"tpl":"-catalog/filters-split.tpl",
+			"config":{
+				"split":true
+			}
 		},
 		"GROUPS":{
 			"external":"-bugagashop/groups.layer.json"

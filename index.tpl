@@ -24,7 +24,7 @@
 		<link data-name="fontawesome" rel="stylesheet" href="{~conf.load.cdncss.fontawesome}" />
 		<link data-name="bootstrap" rel="stylesheet" href="{~conf.load.cdncss.bootstrap}">
 
-		<link rel="stylesheet" href="/-collect/?css">
+		
 
 		<script>
 			window.domready = async (call) => {
@@ -40,5 +40,8 @@
 		</script>
 		<script src="/-collect/?js"></script>
 	</head>
-	<body id="BODY"></body>
+	<body>
+		<link rel="stylesheet" href="/-collect/?css">
+		<div id="BODY"></div>
+	</body>
 </html>
