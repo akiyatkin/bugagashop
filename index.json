@@ -77,5 +77,8 @@
 				}]
 			}
 		}
+	},
+	"layers":{
+		"external":"-bugagashop/index-more.json"
 	}
 }

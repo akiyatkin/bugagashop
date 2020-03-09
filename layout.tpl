@@ -1,15 +1,6 @@
-{hatinfo:}<a href="/contacts"><i class="fas fa-map-marker-alt"></i>&nbsp;{Адрес}</a>
-{BODY:}
-	{Полоса}
-	<div class="hat shadow-sm">
+{HAT:}
+	<div class="container d-flex align-items-stretch">
 		<style>
-			.hat {
-				border-top:5px solid var(--main); 
-				position:sticky; 
-				top:0; 
-				z-index:20; 
-				background-color: white;
-			}
 			.hat .text {
 				border-left:1px solid var(--gray); 
 				border-right:1px solid var(--gray);
@@ -21,6 +12,53 @@
 			}
 			.hat .text a:hover {
 				color:black;
+			}
+		</style>
+		<a class="py-3 pr-3 d-flex align-items-center" href="/">
+			<img src="/-imager/?&w=80&src=-images/logo-short.png">
+		</a>
+		<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
+			<a class="text-nowrap d-block d-md-none" 
+				href="tel:{Номер}"><i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
+			</a>
+		</div>
+		<div class="d-none d-md-flex align-items-stretch" style="min-width: 0">
+			<div class="px-3 d-flex align-items-center text">
+				<div class="pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
+					<a href="/contacts"><i class="fas fa-map-marker-alt"></i>&nbsp;{Адрес}</a>
+				</div>
+				<a class="text-nowrap" href="tel:{Номер}">
+					<i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
+				</a>
+			</div>
+			<div class="d-none d-md-flex px-3 align-items-center">
+				<div><span class="showCallback btn btn-outline-danger text-nowrap">Запросить звонок</span></div>
+			</div>
+			<nav class="d-flex align-items-center" style="min-width: 0" id="USERMENU1"></nav>
+		</div>
+		<div class="bars ml-3 d-flex d-md-none align-items-center">
+			<div><i style="font-size:32px; color:var(--main); cursor: pointer" class="fas fa-bars"></i></div>
+		</div>
+	</div>
+	<div class="mobilemenu shadow">
+		<div class="container py-3">
+			<div id="USERMENU2"></div>
+			<div class="mt-3" id="MAINMENU2"></div>
+			<div class="text-right mt-3">
+					<span class="showCallback btn btn-outline-danger text-nowrap">Запросить звонок</span>
+			</div>
+		</div>
+	</div>
+{BODY:}
+	{Полоса}
+	<div class="hat shadow-sm">
+		<style>
+			.hat {
+				border-top:5px solid var(--main); 
+				position:sticky; 
+				top:0; 
+				z-index:20; 
+				background-color: white;
 			}
 			.hat .mobilemenu {
 				visibility: hidden;
@@ -42,43 +80,7 @@
 				}
 			}
 		</style>
-		<div class="container d-flex align-items-stretch">
-			<a class="py-3 pr-3 d-flex align-items-center" href="/">
-				<img src="/-imager/?&w=80&src=-images/logo-short.png">
-			</a>
-			<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
-				<a class="text-nowrap d-block d-md-none" 
-					href="tel:{Номер}"><i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
-				</a>
-			</div>
-			<div class="d-none d-md-flex align-items-stretch" style="min-width: 0">
-				<div class="px-3 d-flex align-items-center text">
-					
-					<div class="pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
-						{:hatinfo}
-					</div>
-					<a class="text-nowrap" href="tel:{Номер}">
-						<i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
-					</a>
-				</div>
-				<div class="d-none d-md-flex px-3 align-items-center">
-					<div><span class="showCallback btn btn-outline-danger text-nowrap">Запросить звонок</span></div>
-				</div>
-				<nav class="d-flex align-items-center" style="min-width: 0" id="USERMENU1"></nav>
-			</div>
-			<div class="bars ml-3 d-flex d-md-none align-items-center">
-				<div><i style="font-size:32px; color:var(--main); cursor: pointer" class="fas fa-bars"></i></div>
-			</div>
-		</div>
-		<div class="mobilemenu shadow">
-			<div class="container py-3">
-				<div id="USERMENU2"></div>
-				<div class="mt-3" id="MAINMENU2"></div>
-				<div class="text-right mt-3">
-						<span class="showCallback btn btn-outline-danger text-nowrap">Запросить звонок</span>
-				</div>
-			</div>
-		</div>
+		{:HAT}
 		<script type="module">
 			let div = document.body.getElementsByClassName('hat')[0];
 			let cls = cls => div.getElementsByClassName(cls)[0];
@@ -175,7 +177,7 @@
 		<div class="container py-3 footmenu">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 mb-3">
-					<div class="heading">Контакты</div>
+					<a href="/contacts" class="heading">Контакты</a>
 					
 					<div class="mb-1 d-flex align-items-center">
 						<div class="mr-1 red"><i class="fas fa-map-marker-alt fa-fw"></i></div>

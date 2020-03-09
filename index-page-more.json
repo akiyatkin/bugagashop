@@ -1,7 +1,6 @@
 {
 	"divs":{
 		"MAINFILTERS":{
-			"istpl2":"{crumb.child.name=:catalog?:yes}",
 			"divcheck":true,
 			"showanimate":false,
 			"jsontpl":"-showcase/api/filters?val={crumb.child=:catalog?~encode(crumb.child.child.name)}&m={~encode(Crumb.get.m)}",

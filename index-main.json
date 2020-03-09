@@ -4,14 +4,6 @@
 	"json":"-excel/get/group/Главная/?src=~auto/pages/Параметры.xlsx",
 	"dataroot":"data.data.descr",
 	"divs":{
-		"MAINFILTERS":{
-			"external":"-catalog/filters.layer.json",
-			"jsontpl":"-showcase/api/filters?val=&m={~encode(Crumb.get.m)}",
-			"tpl":"-catalog/filters-split.tpl",
-			"config":{
-				"split":true
-			}
-		},
 		"GROUPS":{
 			"external":"-bugagashop/groups.layer.json"
 		},
@@ -46,5 +38,8 @@
 			"json":"-imagetext/?src=~auto/slides/&order=ascending&html",
 			"tplroot":"SLIDES"
 		}
+	},
+	"layers":{
+		"external":"-bugagashop/index-main-more.json"
 	}
 }
