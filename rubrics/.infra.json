@@ -5,6 +5,11 @@
 			"type":"info",
 			"dir":"~auto/pages/"
 		},
+		"help":{
+			"title":"Справочный раздел",
+			"type":"list",
+			"dir":"~auto/help/"
+		},
 		"events":{
 			"title":"События",
 			"type":"list",

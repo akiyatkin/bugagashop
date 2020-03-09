@@ -8,6 +8,10 @@
 			"ysrc":"/data/texts/",
 			"site":"~auto/texts/"
 		},
+		"help": {
+			"ysrc":"/data/help/",
+			"site":"~auto/help/"
+		},
 		"pages": {
 			"ysrc":"/data/pages/",
 			"site":"~auto/pages/"
