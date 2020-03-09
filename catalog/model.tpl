@@ -117,11 +117,6 @@
 		{:CARDS-name}
 		{:CARDS-props}
 	</div>
-{POS-props:}
-	<div class="props">
-		{showcase.props::posprop}
-		{Цена?:cost}
-	</div>
 {CARDS-props:}
 	<div class="props">
 		{showcase.props::divprop}

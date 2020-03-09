@@ -1,3 +1,4 @@
+{hatinfo:}<a href="/contacts"><i class="fas fa-map-marker-alt"></i>&nbsp;{Адрес}</a>
 {BODY:}
 	{Полоса}
 	<div class="hat shadow-sm">
@@ -54,7 +55,7 @@
 				<div class="px-3 d-flex align-items-center text">
 					
 					<div class="pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
-						<a href="/contacts"><i class="fas fa-map-marker-alt"></i>&nbsp;{Адрес}</a>
+						{:hatinfo}
 					</div>
 					<a class="text-nowrap" href="tel:{Номер}">
 						<i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
