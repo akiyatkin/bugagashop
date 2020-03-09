@@ -523,77 +523,64 @@
 			<i class="{Иконка} fa-fw mr-3"></i>
 			<span>{Название}</span>
 		</div>
+{SLIDEScss:}
+	<style>
+		#{div} .carousel {
+			height:100%;
+		}
+		#{div} .carousel-indicators li {
+			height:20px;
+			width:60px;
+			border-radius:0px;
+			cursor: pointer;
+			border-bottom:3px solid white;
+			/*border:5px solid rgba(255,255,255,0.8);*/
+			/*border:5px solid var(--primary);*/
+			/*background-color: var(--warning);*/
+			opacity: 1;
+			background-color: transparent;
+		}
+		#{div} .carousel-indicators .active {
+			opacity: 1;
+			border-bottom:3px solid var(--main);
+		}
+		/*#{div} .carousel-caption {
+			margin-right:-20px;
+		}*/
+		#{div} .carousel-item {
+			height:100%;
+			background-size: cover; 
+			background-position: left;
+		}
+		#{div} section {
+			text-transform: uppercase;
+			flex-direction: column;
+			font-size:30px;
+		}
+		#{div} header {
+			color:var(--main);
+			padding:5px 15px;
+			margin-bottom:5px;
+		}
+		#{div} article {
+			background-color:var(--main);
+			color:white;
+			display: inline-block;
+			padding:5px 15px;
+		}
+		#{div} .carousel-control-next-icon,
+		#{div} .carousel-control-prev-icon {
+			display: none;
+		}
+		@media (max-width:768px) {
+			#{div} section {
+				font-size:18px;
+			}
+		}
+	</style>
 {SLIDES:}
 	<div style="height:320px" id="mainslider" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
-		<style>
-			#{div} .carousel {
-				height:100%;
-			}
-			#{div} .carousel-indicators li {
-				height:20px;
-				width:60px;
-				border-radius:0px;
-				cursor: pointer;
-				border-bottom:3px solid white;
-				/*border:5px solid rgba(255,255,255,0.8);*/
-				/*border:5px solid var(--primary);*/
-				/*background-color: var(--warning);*/
-				opacity: 1;
-				background-color: transparent;
-			}
-			#{div} .carousel-indicators .active {
-				opacity: 1;
-				border-bottom:3px solid var(--main);
-			}
-			/*#{div} .carousel-caption {
-				margin-right:-20px;
-			}*/
-			#{div} .carousel-item {
-				height:100%;
-				background-size: cover; 
-				background-position: left;
-			}
-			#{div} section {
-				text-transform: uppercase;
-				flex-direction: column;
-				font-size:30px;
-			}
-			#{div} header {
-				color:var(--main);
-				padding:5px 15px;
-				margin-bottom:5px;
-			}
-			#{div} article {
-				background-color:var(--main);
-				color:white;
-				display: inline-block;
-				padding:5px 15px;
-			}
-			#{div} .carousel-control-next-icon,
-			#{div} .carousel-control-prev-icon {
-				display: none;
-			}
-			@media (max-width:768px) {
-				#{div} section {
-					font-size:18px;
-				}
-			}
-			/*#{div} header {
-				margin:0; 
-				padding:0; 
-				font-size:120%
-			}
-			#{div} article {
-				margin-bottom:-25px; 
-				color: white; 
-				font-size:100%; 
-				text-align:left;
-			}
-			#{div} .btn {
-				top:34px; 
-				position:relative;
-			}*/
-		</style>
+		{:SLIDEScss}	
 		<ol class="carousel-indicators justify-content-center">
 			{data.list::slidenum}
 		</ol>
