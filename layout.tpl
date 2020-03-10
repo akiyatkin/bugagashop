@@ -231,7 +231,7 @@
 		</div>
 	</footer>
 {SUBSCRIBE:}
-	<form action="/-subscribe" method="post" class="d-flex flex-column flex-lg-row">
+	<form action="/-bugagashop/subscribe" method="post" class="d-flex flex-column flex-lg-row">
 		<div class="flex-grow-1 d-flex order-lg-2 align-items-stretch">
 			<input placeholder="Email" class="form-control flex-grow-1" style="height:100%; border-radius:100px; padding-right:40px" name="email" type="email">
 			<input class="btn btn-secondary" style="margin-left:-30px;" value="Отправить" type="submit">

@@ -28,7 +28,7 @@ $mdata['subject'] = 'Купон со скидкой для '.$data['email'].' '.
 
 
 
-$body = Template::parse('-subscribe/mail.tpl', $data);
+$body = Template::parse('-bugagashop/subscribe/mail.tpl', $data);
 if (!$body)  return Ans::err($ans,"Неудалось подготовить письмо из-за ошибки на сервере!");
 
 session_start();
