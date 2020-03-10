@@ -63,6 +63,7 @@
 			.hat .mobilemenu {
 				visibility: hidden;
 				transition-duration: 0.5s;
+				transition-property:opacity;
 				opacity: 0;
 				position: absolute;
 				width:100%;
@@ -74,9 +75,9 @@
 				display: block;
 			}
 			/*@media (min-width:575px) { */
-			@media (min-width:767px) {
+			@media (min-width:768px) {
 				.hat .mobilemenu.show {
-					visibility: none;
+					visibility: hidden;
 				}
 			}
 		</style>

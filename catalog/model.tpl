@@ -47,7 +47,7 @@
 			color:white;
 			background-color: var(--black);
 			border:none;
-			text-align: right;
+			/*text-align: right;*/
 		}
 
 
@@ -131,7 +131,7 @@
 	</div>
 	{showonecost:}
 		<input type="number" value="1" min="0" max="999" class="form-control" style="width:4em">
-		<div title="Купить {producer} {article} {item}"  class="d-flex border-0 align-items-center justify-content-center add button" data-producer="{producer_nick}" data-article="{article_nick}" data-id="{item_nick}{catkit:ampval}">
+		<div title="Купить {producer} {article} {item}"  class="d-flex {~conf.cart.clsadd} border-0 align-items-center justify-content-center add button" data-producer="{producer_nick}" data-article="{article_nick}" data-id="{item_nick}{catkit:ampval}">
 			{~conf.cart.textadd}
 		</div>
 		<div href="/cart/orders/my/list" class="ico d-flex align-items-stretch justify-content-center" style="font-size:24px; width:60px">

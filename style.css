@@ -20,6 +20,17 @@ background-color: var(--color-blue);
 a {
 	outline:none
 }
+input[type='number'] {
+	/*appearance: textfield;
+	-webkit-appearance: textfield;*/
+    -moz-appearance: textfield;
+}
+input[type='number']:focus,
+input[type='number']:hover {
+	/*appearance: number-input;
+	-webkit-appearance: number-input;*/
+    -moz-appearance: number-input;
+}
 body {
 	font-size:14px;
 }
