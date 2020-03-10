@@ -161,7 +161,7 @@
 				<div class="d-flex flex-column flex-md-row align-items-center">
 					
 					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left">
-						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>15%</b>.
+						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>{:SUBSALE}</b>.
 					</div>
 					<div class="soc pb-2 mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
 						<a href="{Вконтакт}"><i class="fab fa-vk fa-fw"></i></a>
@@ -230,6 +230,7 @@
 
 		</div>
 	</footer>
+	{SUBSALE:}15%
 {SUBSCRIBE:}
 	<form action="/-bugagashop/subscribe" method="post" class="d-flex flex-column flex-lg-row">
 		<div class="flex-grow-1 d-flex order-lg-2 align-items-stretch">
