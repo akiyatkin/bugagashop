@@ -52,7 +52,9 @@ a.active {
 .bg-dark a {
 	color:white;
 }
-
+.noUi-connect {
+    background: var(--gray);
+}
 
 input.form-control,
 input {
