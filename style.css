@@ -217,7 +217,8 @@ form {
 }
 .alert-success {
 	background-color:transparent;
-	border-color:transparent;
+	/*border-color:transparent;*/
+	border-color:var(--orange);
 	color:black;
 }
 
