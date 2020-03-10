@@ -287,7 +287,7 @@
 	{bempty:}
 	{bhas:}
 		<div class="ml-3 text-nowrap">
-			<b class="mr-2">{data.order.count} <i class="fas fa-cart-arrow-down"></i></b> <a href="/cart/orders/my/list"><b>{~cost(data.order.total)} руб.</b></a>
+			<a href="/cart/orders/my/list" style="color:inherit; text-decoration: none"><b class="mr-2">{data.order.count} <i class="fas fa-cart-arrow-down"></i></b></a> <a href="/cart/orders/my/list"><b>{~cost(data.order.total)} руб.</b></a>
 		</div>
 {USERMENU2:}
  	<div class="d-flex justify-content-between" style="min-width: 0">
@@ -395,58 +395,60 @@
 		</div>
 	</div>
 	{MAINBODY:}
-		<section id="ACTIONS"></section>
-		<div id="more"></div>
-		<div class="text-center">
-			<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
-		</div>
-		<script async type="module">
-			(async () => {
-				let btn = document.getElementById('morebtn');
-				let p = 0;
-				btn.addEventListener('click', async () => {
-					if (btn.classList.contains('active')) {
-						Crumb.go('/catalog');
-						return;
-					}
-					p++;
-					let L = (await import('/vendor/akiyatkin/load/Load.js')).default;
-					let Wait = await L.on('import-default', '/vendor/akiyatkin/load/Wait.js')
-					await Wait();
-					
-					let id = 'ACTIONS';
-					if (p != 1) {
-						let div = document.getElementById('more');
-						let n = document.createElement('div');
-						id = 'addmore'+p;
-						n.id = id;
-						div.appendChild(n);
-					}
-					let count = 24;
-					let layer = {
-						"div":id,
-						"divparent":"CONTENT",
-						"istpl":"{:q1}~sum(counter,:-1){:q2}",
-						"config":{
-							"page":p,
-							"count":count
-						},
-						"external":"-bugagashop/actions.layer.json"
-					};
-					Event.one('Layer.onshow', () => {
-						let data = Load.loadJSON(layer.json);
-						if (data.count < count) {
-							btn.innerHTML = "Перейти в каталог";
-							btn.classList.add('active');
+		<div class="mb-5">
+			<section id="ACTIONS"></section>
+			<div id="more"></div>
+			<div class="text-center">
+				<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
+			</div>
+			<script async type="module">
+				(async () => {
+					let btn = document.getElementById('morebtn');
+					let p = 0;
+					btn.addEventListener('click', async () => {
+						if (btn.classList.contains('active')) {
+							Crumb.go('/catalog');
+							return;
 						}
-					}, '', layer);
-					Controller.checkAdd(layer);
-					Controller.check();
-				});
+						p++;
+						let L = (await import('/vendor/akiyatkin/load/Load.js')).default;
+						let Wait = await L.on('import-default', '/vendor/akiyatkin/load/Wait.js')
+						await Wait();
+						
+						let id = 'ACTIONS';
+						if (p != 1) {
+							let div = document.getElementById('more');
+							let n = document.createElement('div');
+							id = 'addmore'+p;
+							n.id = id;
+							div.appendChild(n);
+						}
+						let count = 24;
+						let layer = {
+							"div":id,
+							"divparent":"CONTENT",
+							"istpl":"{:q1}~sum(counter,:-1){:q2}",
+							"config":{
+								"page":p,
+								"count":count
+							},
+							"external":"-bugagashop/actions.layer.json"
+						};
+						Event.one('Layer.onshow', () => {
+							let data = Load.loadJSON(layer.json);
+							if (data.count < count) {
+								btn.innerHTML = "Перейти в каталог";
+								btn.classList.add('active');
+							}
+						}, '', layer);
+						Controller.checkAdd(layer);
+						Controller.check();
+					});
 
-				
-			})();
-		</script>
+					
+				})();
+			</script>
+		</div>
 		{q1:}{
 		{q2:}}
 {NEWS:}
