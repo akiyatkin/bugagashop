@@ -51,9 +51,9 @@
 						"external":"-contacts/contacts.layer.json"
 					}
 				}
+			},{
+				"external":"-bugagashop/index-page-more.json"
 			}]
 		}
-	},{
-		"external":"-bugagashop/index-page-more.json"
 	}]
 }
