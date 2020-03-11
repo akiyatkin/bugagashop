@@ -1,4 +1,5 @@
-{layout::}-bugagashop/layout.pl
+{layout::}-bugagashop/layout.tpl
+{root:}
 <p>
 	Добрый день! 
 </p>
