@@ -14,8 +14,8 @@
 				color:black;
 			}
 		</style>
-		<a class="py-3 pr-3 d-flex align-items-center" href="/">
-			<img src="/-imager/?&w=80&src=-images/logo-short.png">
+		<a class="py-2 pr-3 d-flex align-items-center" href="/">
+			<img src="/-imager/?&w=200&h=40&src=-images/logo.png">
 		</a>
 		<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
 			<a class="text-nowrap d-block d-md-none" 
