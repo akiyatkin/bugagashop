@@ -1,4 +1,5 @@
-{layout::}-bugagashop/layout.pl
+{layout::}-bugagashop/layout.tpl
+{root:}
 <p>
 	Добрый день! 
 </p>
@@ -6,7 +7,7 @@
 	Ваш email {email} был укзан на сайте {host} для получения купона.
 </p>
 <p>
-	Ваш купон со скидкой до <b>{:layou.SUBSALE}</b>
+	Ваш купон со скидкой до <b>{:layout.SUBSALE}</b>
 </p>
 
 <h1>SMDC</h1>
