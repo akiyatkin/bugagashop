@@ -28,9 +28,8 @@
 
 		<script>
 			window.domready = async (call) => {
-				let Load = (await import('/vendor/akiyatkin/load/Load.js')).default
-				let Wait = await Load.on('import-default', '/vendor/akiyatkin/load/Wait.js')
-				let CDN = await Load.on('import-default', '/vendor/akiyatkin/load/CDN.js')
+				let Wait = (await import('/vendor/akiyatkin/load/Wait.js')).default
+				let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default
 				await CDN.js('jquery')
 				await CDN.js('popper')
 				await CDN.js('bootstrap')
