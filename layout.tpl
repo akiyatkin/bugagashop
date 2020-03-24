@@ -411,8 +411,7 @@
 							return;
 						}
 						p++;
-						let L = (await import('/vendor/akiyatkin/load/Load.js')).default;
-						let Wait = await L.on('import-default', '/vendor/akiyatkin/load/Wait.js')
+						let Wait = (await import('/vendor/akiyatkin/load/Wait.js')).default;
 						await Wait();
 						
 						let id = 'ACTIONS';
