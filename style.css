@@ -316,6 +316,7 @@ form {
 	opacity:1;
 	color:white;
 	border:1px var(--black) solid;
+	border-color:white;
 }
 
 .btn-success:not(:disabled):not(.disabled):hover,
@@ -324,6 +325,7 @@ form {
 	color:white;
 	opacity: 1;
 	border:1px var(--orange) solid;
+	border-color:white;
 }
 
 /*.btn-success {
