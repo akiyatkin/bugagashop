@@ -381,10 +381,10 @@
 	{igroup:}<a href="/catalog/{group_nick}">{group}</a>
 {MAIN:}
 	<div class="row">
-		<div class="col-lg-3">
-			<div id="MAINFILTERS" class="mb-3"></div>
-			<div id="BIGACTION" class="mb-3"></div>
-			<div id="GROUPS" class="mb-3"></div>
+		<div class="col-lg-3" class="mb-3">
+			<div id="MAINFILTERS"></div>
+			<div id="BIGACTION"></div>
+			<div id="GROUPS"></div>
 		</div>
 		<div class="col-lg-9">
 			<div id="SLIDES"></div>

@@ -27,12 +27,6 @@
 			"tplroot":"NEWS",
 			"json":"-rubrics/?type=events&list&lim=0,2"
 		},
-		"PRODUCERS":{
-			"is":false,
-			"json":"-showcase/api/producers/",
-			"tpl":"-bugagashop/layout.tpl",
-			"tplroot":"PRODUCERS"
-		},
 		"SLIDES":{
 			"tpl":"-bugagashop/layout.tpl",
 			"json":"-imagetext/?src=~auto/slides/&order=ascending&html",

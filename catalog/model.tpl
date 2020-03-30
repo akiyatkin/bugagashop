@@ -21,6 +21,9 @@
 
 		}
 		#{div} .cart-basket .button {
+			background-color:var(--black);
+			color:white;
+			text-decoration: none;
 			cursor: pointer;
 			transition:.3s;
 			text-transform: uppercase;
@@ -47,6 +50,7 @@
 			color:white;
 			background-color: var(--black);
 			border:none;
+			border-right:1px solid white;
 			/*text-align: right;*/
 		}
 
@@ -140,10 +144,10 @@
 			</div>
 		</div>
 	{showitemonecost:}
-		<a class="button p-2" style="color:inherit; text-decoration: none" href="{:link-pos}">Выбрать</a>
+		<a class="button p-2" href="{:link-pos}">Выбрать</a>
 		</a>
 	{shownocost:}
-		<a class="button p-2" style="color:inherit; text-decoration: none" href="{:link-pos}">Подробней</a>
+		<a class="button p-2" href="{:link-pos}">Подробней</a>
 		</a>
 	{showitemscost:}
 		{:showitemonecost}
