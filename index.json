@@ -60,12 +60,12 @@
 					"json":"-excel/get/group/Услуги/?src=~auto/pages/Параметры.xlsx"
 				},
 				"MAINMENU1":{
-					"json":"-excel/get/group/Главное%20меню/?src=~auto/pages/Параметры.xlsx",
+					"json":"-menu",
 					"tpl":"-bugagashop/layout.tpl",
 					"tplroot":"MAINMENU"
 				},
 				"MAINMENU2":{
-					"json":"-excel/get/group/Главное%20меню/?src=~auto/pages/Параметры.xlsx",
+					"json":"-menu",
 					"tpl":"-bugagashop/layout.tpl",
 					"tplroot":"MAINMENU"
 				},

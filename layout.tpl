@@ -297,7 +297,7 @@
 {MAINMENU:}
 	<div class="mmenu d-flex flex-wrap mx-n2">
 		<style>
-			.mmenu a {
+			#{div} .mmenu a {
 				text-transform: uppercase;
 				font-weight: normal;
 				font-size:14px;
@@ -306,17 +306,67 @@
 				padding-bottom:6px;
 				display: block;
 			}
-			.mmenu a:hover {
+			#{div} .mmenu a:hover {
 				color: var(--orange);
 				padding-bottom:3px;
 				border-bottom:3px solid var(--orange);
 			}
 
+			#{div} .mmenu .submenu {
+				border: solid 1px var(--main);
+				text-transform: none;
+				display: flex;
+				flex-direction: column;
+				background-color:rgba(255,255,255);
+				text-transform: none;
+				position:absolute;
+				display:none;
+				
+				padding: 4px 10px;
+				margin-left: -10px;
+				padding-bottom:0.5rem;
+				border-radius: 0 0 20px 10px;
+				border-radius: 0 0 2px 2px;
+			}
+		
 		</style>
-		{data.data.data::mmitem}
+		{data.childs::mmitem}
+		<script type="module">
+			domready(() => {
+				var div = $('#{div}');
+				div.find('.subgroups > a').hover( (e) => {
+					var li = $(e.target).parent();
+					div.find('li').not(li).find('.submenu').stop().slideUp().css('z-index',1);
+					$(li).find('.submenu').stop().slideDown().css('z-index',2);
+				});
+				Once.exec('mmenu{div}', () => {
+					$('body').click( (e) => {
+						if ($(e.target).parents().filter('#{div}').length) {
+							if ($(e.target).is('a')) var a = $(e.target)
+							else var a = $(e.target).parents('a:first')
+							if (a.parent().find('>.submenu').length) return
+							div.find('.submenu').stop().slideUp('fast')
+						} else {
+							div.find('.submenu').stop().slideUp('fast');
+						}
+					});
+				});
+			})
+		</script>
 	</div>
+
 	{mmitem:}
-		<div class="text-nowrap mx-2"><a href="{Ссылка}">{Название}</a></div>
+		<div class="text-nowrap mx-2 {childs?:strsubgroups}">
+			<a href="{Ссылка}">{Название}{childs?:mark}</a>
+			{childs?:submenu}
+		</div>
+		{strsubgroups:}subgroups
+	{mark:}&nbsp;<i class="fas fa-chevron-circle-down"></i>
+	{submenu:}
+		<div class="submenu">
+			{childs::subitem}
+		</div>
+	{subitem:}<a href="{Ссылка}">{Название}</a><span> </span>
 {PAGE:}
 	<div class="row">
 		<style>
