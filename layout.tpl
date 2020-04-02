@@ -317,51 +317,74 @@
 
 			#{div} .mmenu .submenu {
 				border: solid 1px var(--gray);
-				display: flex;
-				flex-direction: column;
 				background-color:rgba(255,255,255);
 				text-transform: none;
 				position:absolute;
-				display:none;
+				
 				
 				padding: 4px 10px;
 				margin-left: -10px;
 				padding-bottom:0.5rem;
 				border-radius: 0 0 20px 10px;
 				border-radius: 0 0 2px 2px;
-			}
-			#{div} .mmenu .submenu a {
 
+				max-height: 0;
+			    opacity: 0;
+			    overflow: hidden;
+			    transition: 500ms;
 			}
+			#{div} .mmenu .submenu.show {
+		    	opacity: 1;
+		    	max-height: 800px;
+		    }
+			
 			@media (max-width:768px) {
 				#{div} .mmenu .fas,
 				#{div} .mmenu .submenu {
 					display: none!important;
 				}
-
 			}
 		</style>
 		{data.childs::mmitem}
+		
 		<script type="module">
-			domready(() => {
-				var div = $('#{div}');
-				div.find('.subgroups > a').hover( (e) => {
-					var li = $(e.target).parent();
-					div.find('li').not(li).find('.submenu').stop().slideUp().css('z-index',1);
-					$(li).find('.submenu').stop().slideDown().css('z-index',2);
-				});
-				Once.exec('mmenu{div}', () => {
-					$('body').click( (e) => {
-						if ($(e.target).parents().filter('#{div}').length) {
-							if ($(e.target).is('a')) var a = $(e.target)
-							else var a = $(e.target).parents('a:first')
-							if (a.parent().find('>.submenu').length) return
-							div.find('.submenu').stop().slideUp('fast')
-						} else {
-							div.find('.submenu').stop().slideUp('fast');
+			let div = document.getElementById('{div}')
+			let cls = (cls, d = div) => d.getElementsByClassName(cls)
+			let tag = (tag, div) => div.getElementsByTagName(tag)
+			for (const sub of cls('subgroups')) {
+				for (const a of tag('a',sub)) {
+					let myli = a.parentNode;
+					let sub = cls('submenu', myli)[0]
+					if (!sub) continue
+					a.addEventListener('mouseenter', () => {
+						sub.style.zIndex = 2
+						sub.classList.add('show')
+						for (const li of tag('li', div)) {
+							if(myli == li) continue
+							let sub = cls('submenu', li)[0]
+							sub.style.zIndex = 1
+							sub.classList.remove('show')
 						}
-					});
-				});
+						
+						
+					})
+				}
+			}
+			document.body.addEventListener('click', (e) => {
+				for (const p of e.path) {
+					if (p !== div) continue;
+					
+					let ar = e.path.filter(el => el.tagName == 'A')
+					if (!ar.length) return
+					let a = ar[0]
+
+					if (cls('submenu', a.parentNode).length) return
+					break;
+				}
+
+				for (const sub of cls('submenu', div)) {
+					sub.classList.remove('show')	
+				}
 			})
 		</script>
 	</div>
@@ -402,13 +425,12 @@
 				cursor:pointer;
 			}
 			#{div} .card-body {
-		        max-height: 0;
+			    max-height: 0;
 			    opacity: 0;
 			    overflow: hidden;
 			    transition: 0.5s;
-		    }
+			}
 		    #{div} .card-body.show {
-		    	display: block;
 		    	opacity: 1;
 		    	max-height: 800px;
 		    }
