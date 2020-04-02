@@ -298,23 +298,25 @@
 	<div class="mmenu d-flex flex-wrap mx-n2">
 		<style>
 			#{div} .mmenu a {
-				text-transform: uppercase;
+			
 				font-weight: normal;
 				font-size:14px;
 				text-decoration: none;
 				padding-top:6px;
 				padding-bottom:6px;
+				text-transform: uppercase;
 				display: block;
 			}
 			#{div} .mmenu a:hover {
-				color: var(--orange);
 				padding-bottom:3px;
 				border-bottom:3px solid var(--orange);
+				color: var(--orange);
+				
 			}
+			
 
 			#{div} .mmenu .submenu {
-				border: solid 1px var(--main);
-				text-transform: none;
+				border: solid 1px var(--gray);
 				display: flex;
 				flex-direction: column;
 				background-color:rgba(255,255,255);
@@ -328,7 +330,16 @@
 				border-radius: 0 0 20px 10px;
 				border-radius: 0 0 2px 2px;
 			}
-		
+			#{div} .mmenu .submenu a {
+
+			}
+			@media (max-width:768px) {
+				#{div} .mmenu .fas,
+				#{div} .mmenu .submenu {
+					display: none!important;
+				}
+
+			}
 		</style>
 		{data.childs::mmitem}
 		<script type="module">
@@ -363,7 +374,7 @@
 		{strsubgroups:}subgroups
 	{mark:}&nbsp;<i class="fas fa-chevron-circle-down"></i>
 	{submenu:}
-		<div class="submenu">
+		<div class="submenu shadow">
 			{childs::subitem}
 		</div>
 	{subitem:}<a href="{Ссылка}">{Название}</a><span> </span>
