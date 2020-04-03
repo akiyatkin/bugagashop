@@ -126,6 +126,12 @@
 		{showcase.props::divprop}
 		{Цена?:cost}
 	</div>
+{ROWS-props:}
+	{logo?:producerlogo}
+	<table class="props">
+		{showcase.props::trprop}
+	</table>
+	{Цена?:cost}
 {cost-one:}
 		<div class="d-flex justify-content-between align-items-end"><b class="cost {Наличие=:strАкция?:strred}">{~cost(Цена)}{:unit}</b> {Старая цена:oldcost}</div>
 		{oldcost:}<span class="text-muted" title="Старая цена"><s>{~cost(.)}{:unit}</s></span>
