@@ -131,9 +131,9 @@
 	<table class="props">
 		{showcase.props::trprop}
 	</table>
-	{Цена?:cost}
+	<div style="clear:both" class="float-left">{Цена?:cost}</div>
 {cost-one:}
-		<div class="d-flex justify-content-between align-items-end"><b class="cost {Наличие=:strАкция?:strred}">{~cost(Цена)}{:unit}</b> {Старая цена:oldcost}</div>
+		<div class="d-flex justify-content-between align-items-end"><b class="cost {Наличие=:strАкция?:strred}">{~cost(Цена)}{:unit}</b>&nbsp;{Старая цена:oldcost}</div>
 		{oldcost:}<span class="text-muted" title="Старая цена"><s>{~cost(.)}{:unit}</s></span>
 {CARDS-basket:}
 	<div style="background-color:var(--black); text-align:center" class="cart-basket">
