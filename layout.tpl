@@ -18,7 +18,7 @@
 			<img src="/-imager/?&w=200&h=40&src=-images/logo.png">
 		</a>
 		<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
-			<a class="text-nowrap d-block d-md-none" 
+			<a class="text-nowrap d-none d-sm-block d-md-none" 
 				href="tel:{Номер}"><i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
 			</a>
 		</div>
@@ -438,11 +438,21 @@
 		    	opacity: 1;
 		    	max-height: 800px;
 		    }
-			@media (max-width:768px) {
+			@media (max-width:991px) {
+				#{div} .card-body {
+					opacity: 1;
+		    		max-height: 800px;
+				}
+				#{div} .card-body.show {
+					opacity: 0;
+		    		max-height: 0;	
+				}
+			}
+			/*@media (max-width:768px) {
 				#{div} .card-body {
 					display: none;
 				}
-			}
+			}*/
 		</style>
 		<div class="bg-primary card-header d-flex justify-content-between">
 			<div class="flex-grow-1 d-flex align-items-center">
