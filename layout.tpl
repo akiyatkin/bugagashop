@@ -375,10 +375,14 @@
 				}
 			}
 			document.body.addEventListener('click', (e) => {
-				for (const p of e.path) {
+				let el = e.target
+				let path = [el]
+				while (el && el.parentElement) path.push(el = el.parentElement)
+
+				for (const p of path) {
 					if (p !== div) continue;
 					
-					let ar = e.path.filter(el => el.tagName == 'A')
+					let ar = path.filter(el => el.tagName == 'A')
 					if (!ar.length) return
 					let a = ar[0]
 
