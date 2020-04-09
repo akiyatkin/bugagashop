@@ -37,7 +37,7 @@
 			justify-content: space-between;
 		}
 		#{div} .cart-basket .button:hover {
-			background-color: var(--orange)
+			background-color: var(--danger)
 		}
 		#{div} .cart-basket .ico {
 			transition:.3s;

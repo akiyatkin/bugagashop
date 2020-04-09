@@ -9,16 +9,13 @@ background-color: var(--color-blue);
 	
 	--main: #c60511;
 	--darkmain: #ab040e;
-	--lightmain: #cb5905;
 
 	--blue: #0069b4;
-	--orange: #cb5905;
 	
 	--primary: var(--main);
 	--warning: var(--main);
 	/*--danger: #c60511;
     --blue: #0b7ace;
-    --orange: #d76447;
     --primary: #0b7ace;
     --warning: #ff633f;*/
 }
@@ -49,7 +46,7 @@ a {
 	border-color:var(--main);
 }
 a:hover {
-	color:var(--orange);
+	color:var(--danger);
 }
 a.active {
 	font-weight:bold;
@@ -77,7 +74,7 @@ pre {
 .cost {
 	font-size:20px;
 	font-weight:bold;
-	color:var(--orange);
+	color:var(--danger);
 }
 p {
 	font-size:1em;
@@ -164,8 +161,8 @@ form {
 .btn-outline-danger:not(:disabled):not(.disabled):hover,
 .btn-outline-danger:not(:disabled):not(.disabled):active {
 	color: white;
-	background-color: var(--main);
-	border-color: var(--orange);	
+	background-color: var(--danger);
+	border-color: var(--danger);	
 }
 .btn-outline-danger.disabled, .btn-outline-danger:disabled {
 	cursor: default;
@@ -175,7 +172,7 @@ form {
 	border:1px solid white;
 }
 .btn-secondary:hover {
-	background-color: var(--orange);
+	background-color: var(--danger);
 	border-color: white;
 }
 .btn-outline-info {
@@ -208,7 +205,7 @@ form {
 .btn-danger:hover,
 .btn-primary:hover {
 	/*opacity: 0.8;*/
-    background-color: var(--orange);
+    background-color: var(--danger);
     border-color:white;
 }
 .bg-primary,
@@ -218,12 +215,12 @@ form {
 }
 .alert-primary {
 	background-color: transparent;
-	border-color:var(--orange);
+	border-color:var(--danger);
 }
 .alert-success {
 	background-color:transparent;
 	/*border-color:transparent;*/
-	border-color:var(--orange);
+	border-color:var(--danger);
 	color:black;
 }
 
@@ -327,10 +324,10 @@ form {
 
 .btn-success:not(:disabled):not(.disabled):hover,
 .btn-success:not(:disabled):not(.disabled):active {
-	background-color:var(--orange);
+	background-color:var(--danger);
 	color:white;
 	opacity: 1;
-	border:1px var(--orange) solid;
+	border:1px var(--danger) solid;
 	border-color:white;
 }
 
@@ -379,7 +376,7 @@ form {
     color: var(--main);
 }
 .page-link:hover {
-    color: var(--orange);
+    color: var(--danger);
 }
 .table {
 	font-size:1em;

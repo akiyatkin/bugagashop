@@ -313,8 +313,8 @@
 			}
 			#{div} .mmenu a:hover {
 				padding-bottom:3px;
-				border-bottom:3px solid var(--orange);
-				color: var(--orange);
+				border-bottom:3px solid var(--danger);
+				color: var(--danger);
 				
 			}
 			
