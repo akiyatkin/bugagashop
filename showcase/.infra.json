@@ -1,6 +1,8 @@
 {
 	"images":"~images/",
 	"icons":"~images/",
+	"folders":"~images/",
+	
 	"prices":"~auto/.prices/",
 	"groups":"~auto/texts/",
 	"texts":"~auto/texts/",

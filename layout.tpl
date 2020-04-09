@@ -18,7 +18,7 @@
 			<img src="/-imager/?&w=200&h=40&src=-images/logo.png">
 		</a>
 		<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
-			<a class="text-nowrap d-block d-md-none" 
+			<a class="text-nowrap d-none d-sm-block d-md-none" 
 				href="tel:{Номер}"><i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
 			</a>
 		</div>
@@ -111,25 +111,6 @@
 	<section id="CONTENT" style="min-height: 400px" class="container"></section>
 	<footer>
 		<style>
-			footer .soc {
-				font-size:22px
-			}
-			@media (max-width: 768px) {
-				footer .title {
-					font-size: 20px;
-				}
-				footer .soc {
-					font-size: 48px;
-				}
-				footer .soc a {
-					margin:10px 20px;
-				}
-			}
-			@media (max-width: 575px) {
-				footer .title {
-					font-size: 16px;
-				}
-			}
 			footer {
 				color:#999999;
 			}
@@ -157,24 +138,7 @@
 				color:var(--main);
 			}
 		</style>
-		<div class="container py-3">
-			<div class="py-4 py-md-3 px-3 px-sm-5 dark radius-pill radius-md-0" style="color:white; background-color: var(--main)">
-				<div class="d-flex flex-column flex-md-row align-items-center">
-					
-					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left">
-						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>{:SUBSALE}</b>.
-					</div>
-					<div class="soc pb-2 mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
-						<a href="{Вконтакт}"><i class="fab fa-vk fa-fw"></i></a>
-						<a href="{Инстаграм}"><i class="fab fa-instagram fa-fw"></i></a>
-					</div>
-					<div style="width:100%" class="order-md-3 flex-grow-1 d-flex align-items-center">
-						<div id="SUBSCRIBE"></div>
-					</div>
-				</div>
-
-			</div>
-		</div>
+		{:SUBROW}
 		<div class="container py-3 footmenu">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 mb-3">
@@ -232,6 +196,46 @@
 		</div>
 	</footer>
 	{SUBSALE:}15%
+	{SUBROW:}
+		<div class="container py-3">
+			<style>
+				footer .soc {
+					font-size:22px
+				}
+				@media (max-width: 768px) {
+					footer .title {
+						font-size: 20px;
+					}
+					footer .soc {
+						font-size: 48px;
+					}
+					footer .soc a {
+						margin:10px 20px;
+					}
+				}
+				@media (max-width: 575px) {
+					footer .title {
+						font-size: 16px;
+					}
+				}
+			</style>
+			<div class="py-4 py-md-3 px-3 px-sm-5 dark radius-pill radius-md-0" style="color:white; background-color: var(--main)">
+				<div class="d-flex flex-column flex-md-row align-items-center">
+					
+					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left">
+						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>{:SUBSALE}</b>.
+					</div>
+					<div class="soc pb-2 mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
+						<a href="{Вконтакт}"><i class="fab fa-vk fa-fw"></i></a>
+						<a href="{Инстаграм}"><i class="fab fa-instagram fa-fw"></i></a>
+					</div>
+					<div style="width:100%" class="order-md-3 flex-grow-1 d-flex align-items-center">
+						<div id="SUBSCRIBE"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
 {SUBSCRIBE:}
 	<form action="/-bugagashop/subscribe" method="post" class="d-flex flex-column flex-lg-row">
 		<div class="flex-grow-1 d-flex order-lg-2 align-items-stretch">
@@ -297,26 +301,114 @@
 {MAINMENU:}
 	<div class="mmenu d-flex flex-wrap mx-n2">
 		<style>
-			.mmenu a {
-				text-transform: uppercase;
+			#{div} .mmenu a {
+			
 				font-weight: normal;
 				font-size:14px;
 				text-decoration: none;
 				padding-top:6px;
 				padding-bottom:6px;
+				text-transform: uppercase;
 				display: block;
 			}
-			.mmenu a:hover {
-				color: var(--orange);
+			#{div} .mmenu a:hover {
 				padding-bottom:3px;
 				border-bottom:3px solid var(--orange);
+				color: var(--orange);
+				
 			}
+			
 
+			#{div} .mmenu .submenu {
+				border: solid 1px var(--gray);
+				background-color:rgba(255,255,255);
+				text-transform: none;
+				position:absolute;
+				
+				
+				padding: 4px 10px;
+				margin-left: -10px;
+				padding-bottom:0.5rem;
+				border-radius: 0 0 20px 10px;
+				border-radius: 0 0 2px 2px;
+
+				max-height: 0;
+			    opacity: 0;
+			    overflow: hidden;
+			    transition: 500ms;
+			}
+			#{div} .mmenu .submenu.show {
+		    	opacity: 1;
+		    	max-height: 800px;
+		    }
+			
+			@media (max-width:768px) {
+				#{div} .mmenu .fas,
+				#{div} .mmenu .submenu {
+					display: none!important;
+				}
+			}
 		</style>
-		{data.data.data::mmitem}
+		{data.childs::mmitem}
+		
+		<script type="module">
+			let div = document.getElementById('{div}')
+			let cls = (cls, d = div) => d.getElementsByClassName(cls)
+			let tag = (tag, div) => div.getElementsByTagName(tag)
+			for (const sub of cls('subgroups')) {
+				for (const a of tag('a',sub)) {
+					let myli = a.parentNode;
+					let sub = cls('submenu', myli)[0]
+					if (!sub) continue
+					a.addEventListener('mouseenter', () => {
+						sub.style.zIndex = 2
+						sub.classList.add('show')
+						for (const li of tag('li', div)) {
+							if(myli == li) continue
+							let sub = cls('submenu', li)[0]
+							sub.style.zIndex = 1
+							sub.classList.remove('show')
+						}
+						
+						
+					})
+				}
+			}
+			document.body.addEventListener('click', (e) => {
+				let el = e.target
+				let path = [el]
+				while (el && el.parentElement) path.push(el = el.parentElement)
+
+				for (const p of path) {
+					if (p !== div) continue;
+					
+					let ar = path.filter(el => el.tagName == 'A')
+					if (!ar.length) return
+					let a = ar[0]
+
+					if (cls('submenu', a.parentNode).length) return
+					break;
+				}
+
+				for (const sub of cls('submenu', div)) {
+					sub.classList.remove('show')	
+				}
+			})
+		</script>
 	</div>
+
 	{mmitem:}
-		<div class="text-nowrap mx-2"><a href="{Ссылка}">{Название}</a></div>
+		<div class="text-nowrap mx-2 {childs?:strsubgroups}">
+			<a href="{Ссылка}">{Название}{childs?:mark}</a>
+			{childs?:submenu}
+		</div>
+		{strsubgroups:}subgroups
+	{mark:}&nbsp;<i class="fas fa-chevron-circle-down"></i>
+	{submenu:}
+		<div class="submenu shadow">
+			{childs::subitem}
+		</div>
+	{subitem:}<a href="{Ссылка}">{Название}</a><span> </span>
 {PAGE:}
 	<div class="row">
 		<style>
@@ -341,21 +433,30 @@
 				cursor:pointer;
 			}
 			#{div} .card-body {
-		        max-height: 0;
+			    max-height: 0;
 			    opacity: 0;
 			    overflow: hidden;
 			    transition: 0.5s;
-		    }
+			}
 		    #{div} .card-body.show {
-		    	display: block;
 		    	opacity: 1;
 		    	max-height: 800px;
 		    }
-			@media (max-width:768px) {
+			@media (max-width:991px) {
+				#{div} .card-body {
+					opacity: 1;
+		    		max-height: 800px;
+				}
+				#{div} .card-body.show {
+					opacity: 0;
+		    		max-height: 0;	
+				}
+			}
+			/*@media (max-width:768px) {
 				#{div} .card-body {
 					display: none;
 				}
-			}
+			}*/
 		</style>
 		<div class="bg-primary card-header d-flex justify-content-between">
 			<div class="flex-grow-1 d-flex align-items-center">
@@ -381,10 +482,10 @@
 	{igroup:}<a href="/catalog/{group_nick}">{group}</a>
 {MAIN:}
 	<div class="row">
-		<div class="col-lg-3">
-			<div id="MAINFILTERS" class="mb-3"></div>
-			<div id="BIGACTION" class="mb-3"></div>
-			<div id="GROUPS" class="mb-3"></div>
+		<div class="col-lg-3" class="mb-3">
+			<div id="MAINFILTERS"></div>
+			<div id="BIGACTION"></div>
+			<div id="GROUPS"></div>
 		</div>
 		<div class="col-lg-9">
 			<div id="SLIDES"></div>
@@ -411,8 +512,7 @@
 							return;
 						}
 						p++;
-						let L = (await import('/vendor/akiyatkin/load/Load.js')).default;
-						let Wait = await L.on('import-default', '/vendor/akiyatkin/load/Wait.js')
+						let Wait = (await import('/vendor/akiyatkin/load/Wait.js')).default;
 						await Wait();
 						
 						let id = 'ACTIONS';
@@ -603,8 +703,7 @@
 			(async () => {
 				let div = document.getElementById('mainslider');
 				div.addEventListener('click', async () => {
-					let Load = (await import('/vendor/akiyatkin/load/Load.js')).default;
-					let CDN = await Load.on('import-default', '/vendor/akiyatkin/load/CDN.js')
+					let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default;
 					await CDN.js('popper');
 					await CDN.js('bootstrap');
 					$(div).carousel('pause');
