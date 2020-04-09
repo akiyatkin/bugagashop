@@ -106,7 +106,7 @@
 				background-color: var(--main); 
 			">{Наличие}</div>
 			<div style="float:right; width:10px; height:0px; 
-				border-left:10px solid #ab040e;
+				border-left:10px solid var(--darkmain);
 				border-bottom:10px solid white;
 				"></div>
 		</div>

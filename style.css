@@ -6,9 +6,14 @@ background-color: var(--color-blue);
 :root {
 	--gray: #e6e6e6;
 	--black: #424242;
+	
 	--main: #c60511;
+	--darkmain: #ab040e;
+	--lightmain: #cb5905;
+
 	--blue: #0069b4;
 	--orange: #cb5905;
+	
 	--primary: var(--main);
 	--warning: var(--main);
 	/*--danger: #c60511;
