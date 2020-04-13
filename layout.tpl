@@ -144,10 +144,8 @@
 				<div class="col-sm-6 col-lg-3 mb-3">
 					<a href="/contacts" class="heading">Контакты</a>
 					
-					<div class="mb-1 d-flex align-items-center">
-						<div class="mr-1 red"><i class="fas fa-map-marker-alt fa-fw"></i></div>
-						<div class="flex-grow-1">{Адрес}</div>
-					</div>
+					{Адрес?:footaddr}
+					
 
 					<div class="mb-1 d-flex align-items-center">
 						<div class="mr-1 red"><i class="fas fa-phone-alt fa-fw"></i></div>
@@ -195,6 +193,11 @@
 
 		</div>
 	</footer>
+	{footaddr:}
+		<div class="mb-1 d-flex align-items-center">
+			<div class="mr-1 red"><i class="fas fa-map-marker-alt fa-fw"></i></div>
+			<div class="flex-grow-1">{Адрес}</div>
+		</div>
 	{SUBSALE:}15%
 	{SUBROW:}
 		<div class="container py-3">
