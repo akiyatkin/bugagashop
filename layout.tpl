@@ -24,9 +24,9 @@
 		</div>
 		<div class="d-none d-md-flex align-items-stretch" style="min-width: 0">
 			<div class="px-3 d-flex align-items-center text">
-				<!--<div class="pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
-					<a href="/contacts"><i class="fas fa-map-marker-alt"></i>&nbsp;{Адрес}</a>
-				</div>-->
+				<div class="text-muted pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
+					{Слоган}
+				</div>
 				<a class="text-nowrap" href="tel:{Номер}">
 					<i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
 				</a>
