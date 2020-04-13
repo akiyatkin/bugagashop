@@ -32,7 +32,7 @@
 				</a>
 			</div>
 			<div class="d-none d-md-flex px-3 align-items-center">
-				<div><span class="showCallback btn btn-outline-danger text-nowrap">Запросить звонок</span></div>
+				<div><span class="showContacts btn btn-outline-danger text-nowrap">Написать сообщение</span></div>
 			</div>
 			<nav class="d-flex align-items-center" style="min-width: 0" id="USERMENU1"></nav>
 		</div>
@@ -45,7 +45,7 @@
 			<div id="USERMENU2"></div>
 			<div class="mt-3" id="MAINMENU2"></div>
 			<div class="text-right mt-3">
-					<span class="showCallback btn btn-outline-danger text-nowrap">Запросить звонок</span>
+					<span class="showContacts btn btn-outline-danger text-nowrap">Написать сообщение</span>
 			</div>
 		</div>
 	</div>
