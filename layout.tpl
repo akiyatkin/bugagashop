@@ -225,20 +225,24 @@
 			<div class="py-4 py-md-3 px-3 px-sm-5 dark radius-pill radius-md-0" style="color:white; background-color: var(--main)">
 				<div class="d-flex flex-column flex-md-row align-items-center">
 					
-					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left">
+					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left mb-sm-3">
 						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>{:SUBSALE}</b>.
 					</div>
-					<div class="soc pb-2 mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
-						<a href="{Вконтакт}"><i class="fab fa-vk fa-fw"></i></a>
-						<a href="{Инстаграм}"><i class="fab fa-instagram fa-fw"></i></a>
-					</div>
-					<div style="width:100%" class="order-md-3 flex-grow-1 d-flex align-items-center">
+					{(Вконтакт|Инстаграм)?:printsoc}
+					<div style="width:100%" class="order-md-3 flex-grow-1 d-flex align-items-center justify-content-center">
 						<div id="SUBSCRIBE"></div>
 					</div>
 				</div>
 
 			</div>
 		</div>
+		{printsoc:}
+			<div class="soc pb-2 mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
+				{Вконтакт?:printvk}
+				{Инстаграм?:printinst}
+			</div>
+		{printvk:}<a href="{Вконтакт}"><i class="fab fa-vk fa-fw"></i></a>
+		{printinst:}<a href="{Инстаграм}"><i class="fab fa-instagram fa-fw"></i></a>
 {SUBSCRIBE:}
 	<form action="/-bugagashop/subscribe" method="post" class="d-flex flex-column flex-lg-row">
 		<div class="flex-grow-1 d-flex order-lg-2 align-items-stretch">
