@@ -6,13 +6,13 @@
 				border-right:1px solid var(--gray);
 			}
 			.hat .text,
-			.hat .text a {
-				color:#999999; 
+			.hat a {
+				/*color:#999999; */
 				text-decoration: none;
 			}
-			.hat .text a:hover {
+			/*.hat .text a:hover {
 				color:black;
-			}
+			}*/
 		</style>
 		<a class="py-2 pr-3 d-flex align-items-center" href="/">
 			<img src="/-imager/?&w=200&h=40&src=-images/logo.png">
@@ -24,9 +24,9 @@
 		</div>
 		<div class="d-none d-md-flex align-items-stretch" style="min-width: 0">
 			<div class="px-3 d-flex align-items-center text">
-				<div class="pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
+				<!--<div class="pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
 					<a href="/contacts"><i class="fas fa-map-marker-alt"></i>&nbsp;{Адрес}</a>
-				</div>
+				</div>-->
 				<a class="text-nowrap" href="tel:{Номер}">
 					<i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
 				</a>
