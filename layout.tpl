@@ -255,7 +255,7 @@
 				<label style="color:var(--gray)" class="custom-control-label" for="checkbox{id}">{Политика}</label>
 			</div>
 		</div>
-		<script async type="module">
+		<script type="module">
 			let div = document.getElementById('{div}')
 			let cls = cls => div.getElementsByClassName(cls)[0]
 			let tag = tag => div.getElementsByTagName(tag)[0]
@@ -509,51 +509,51 @@
 			<div class="text-center">
 				<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
 			</div>
-			<script async type="module">
-				(async () => {
-					let btn = document.getElementById('morebtn');
-					let p = 0;
-					btn.addEventListener('click', async () => {
-						if (btn.classList.contains('active')) {
-							Crumb.go('/catalog');
-							return;
-						}
-						p++;
-						let Wait = (await import('/vendor/akiyatkin/load/Wait.js')).default;
-						await Wait();
-						
-						let id = 'ACTIONS';
-						if (p != 1) {
-							let div = document.getElementById('more');
-							let n = document.createElement('div');
-							id = 'addmore'+p;
-							n.id = id;
-							div.appendChild(n);
-						}
-						let count = 24;
-						let layer = {
-							"div":id,
-							"divparent":"CONTENT",
-							"istpl":"{:q1}~sum(counter,:-1){:q2}",
-							"config":{
-								"page":p,
-								"count":count
-							},
-							"external":"-bugagashop/actions.layer.json"
-						};
-						Event.one('Layer.onshow', () => {
-							let data = Load.loadJSON(layer.json);
-							if (data.count < count) {
-								btn.innerHTML = "Перейти в каталог";
-								btn.classList.add('active');
-							}
-						}, '', layer);
-						Controller.checkAdd(layer);
-						Controller.check();
-					});
-
+			<script type="module">
+				import { DOM } from '/vendor/akiyatkin/load/DOM.js'
+				import { Crumb } from '/vendor/infrajs/controller/src/Crumb.js'
+				import { Event } from '/vendor/infrajs/event/Event.js'
+				import { Controller } from '/vendor/infrajs/controller/src/Controller.js'
+				
+				let btn = document.getElementById('morebtn');
+				let p = 0;
+				btn.addEventListener('click', async () => {
+					if (btn.classList.contains('active')) {
+						Crumb.go('/catalog');
+						return;
+					}
+					p++;
+					await DOM.wait('load')
 					
-				})();
+					let id = 'ACTIONS';
+					if (p != 1) {
+						let div = document.getElementById('more');
+						let n = document.createElement('div');
+						id = 'addmore'+p;
+						n.id = id;
+						div.appendChild(n);
+					}
+					let count = 24;
+					let layer = {
+						"div":id,
+						"divparent":"CONTENT",
+						"istpl":"{:q1}~sum(counter,:-1){:q2}",
+						"config":{
+							"page":p,
+							"count":count
+						},
+						"external":"-bugagashop/actions.layer.json"
+					};
+					Event.one('Layer.onshow', () => {
+						let data = Load.loadJSON(layer.json);
+						if (data.count < count) {
+							btn.innerHTML = "Перейти в каталог";
+							btn.classList.add('active');
+						}
+					}, '', layer);
+					Controller.checkAdd(layer);
+					Controller.check(layer);
+				});
 			</script>
 		</div>
 		{q1:}{
@@ -706,7 +706,7 @@
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="sr-only">Вперёд</span>
 		</a>
-		<script async type="module">
+		<script type="module">
 			(async () => {
 				let div = document.getElementById('mainslider');
 				div.addEventListener('click', async () => {

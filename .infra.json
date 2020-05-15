@@ -1,5 +1,6 @@
 {
 	"dependencies":["cart"],
+	"js":"infra.js",
 	"clutch":{
 		"catalog":["vendor/akiyatkin/bugagashop/"],
 		"controller":["vendor/akiyatkin/bugagashop/"],

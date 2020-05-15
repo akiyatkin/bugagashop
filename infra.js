@@ -1,0 +1,6 @@
+import { } from '/vendor/infrajs/ascroll/infra.js'
+import { } from '/vendor/infrajs/controller/infra.js'
+import { } from '/vendor/infrajs/contacts/infra.js'
+import { } from '/vendor/akiyatkin/waitshow/infra.js'
+import { } from '/vendor/infrajs/memcode/infra.js'
+import { } from '/vendor/akiyatkin/goal/infra.js'

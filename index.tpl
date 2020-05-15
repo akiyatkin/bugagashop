@@ -24,23 +24,10 @@
 		<link data-name="fontawesome" rel="stylesheet" href="{~conf.load.cdncss.fontawesome}" />
 		<link data-name="bootstrap" rel="stylesheet" href="{~conf.load.cdncss.bootstrap}">
 
-		
-
-		<script>
-			window.domready = async (call) => {
-				let Wait = (await import('/vendor/akiyatkin/load/Wait.js')).default
-				let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default
-				await CDN.js('jquery')
-				await CDN.js('popper')
-				await CDN.js('bootstrap')
-				await Wait()
-				call()
-			}
-		</script>
-		<script src="/-collect/?js"></script>
+		<script type="module" src="/vendor/akiyatkin/bugagashop/infra.js"></script>
 	</head>
 	<body>
-		<link rel="stylesheet" href="/-collect/?css">
+		<link rel="stylesheet" href="/-collect/css">
 		<div id="BODY"></div>
 	</body>
 </html>
