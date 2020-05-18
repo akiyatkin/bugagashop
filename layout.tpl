@@ -276,7 +276,7 @@
 		<div><a href="/catalog/{group_nick}">{group}</a></div>
 {live::}-catalog/live/layout.tpl
 {SEARCHFORM:}
-	<form class="shadow-over">
+	<form data-autosave="{autosavename}" class="shadow-over">
 		<div class="d-flex align-items-stretch">
 			<div class="flex-grow-1">
 				<input style="width:100%" type="search" id="search" class="form-control" name="search" placeholder="Поиск о каталогу">
@@ -707,15 +707,15 @@
 			<span class="sr-only">Вперёд</span>
 		</a>
 		<script type="module">
-			(async () => {
-				let div = document.getElementById('mainslider');
-				div.addEventListener('click', async () => {
-					let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default;
-					await CDN.js('popper');
-					await CDN.js('bootstrap');
-					$(div).carousel('pause');
-				});
-			})();
+			import { CDN } from '/vendor/akiyatkin/load/CDN.js'
+			
+			let div = document.getElementById('mainslider');
+			div.addEventListener('click', async () => {
+				await CDN.js('popper');
+				await CDN.js('bootstrap');
+				$(div).carousel('pause');
+			});
+
 		</script>
 	</div>
 	{slidenum:}<li data-target="#mainslider" data-slide-to="{~sum(~key)}" class="{~first()?:active}"></li>
