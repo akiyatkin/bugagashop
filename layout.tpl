@@ -510,7 +510,6 @@
 				<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
 			</div>
 			<script type="module">
-				import { DOM } from '/vendor/akiyatkin/load/DOM.js'
 				import { Crumb } from '/vendor/infrajs/controller/src/Crumb.js'
 				import { Event } from '/vendor/infrajs/event/Event.js'
 				import { Controller } from '/vendor/infrajs/controller/src/Controller.js'
@@ -523,7 +522,6 @@
 						return;
 					}
 					p++;
-					await DOM.wait('load')
 					
 					let id = 'ACTIONS';
 					if (p != 1) {
