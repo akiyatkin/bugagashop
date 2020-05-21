@@ -512,7 +512,6 @@
 			<script type="module">
 				import { Crumb } from '/vendor/infrajs/controller/src/Crumb.js'
 				import { Event } from '/vendor/infrajs/event/Event.js'
-				import { Controller } from '/vendor/infrajs/controller/src/Controller.js'
 				
 				let btn = document.getElementById('morebtn');
 				let p = 0;
@@ -549,6 +548,7 @@
 							btn.classList.add('active');
 						}
 					}, '', layer);
+					let Controller = (await import('/vendor/infrajs/controller/src/Controller.js')).Controller
 					Controller.checkAdd(layer);
 					Controller.check();
 				});
