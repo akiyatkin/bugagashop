@@ -1,5 +1,6 @@
 {
 	"marginBottom":20,
 	"height":".hat",
-	"anchor":".breadcrumb"
+	"anchor":"body",
+	"anchor2":".breadcrumb"
 }

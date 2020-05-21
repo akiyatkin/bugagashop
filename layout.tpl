@@ -550,7 +550,7 @@
 						}
 					}, '', layer);
 					Controller.checkAdd(layer);
-					Controller.check(layer);
+					Controller.check();
 				});
 			</script>
 		</div>

@@ -1,5 +1,4 @@
 {
-	"checkversion":true,
 	"showanimate":true,
 	"seojsontpl":"-seo/?path={crumb.query}",
 	"data":true,
