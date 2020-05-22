@@ -24,7 +24,7 @@
 		<link data-name="fontawesome" rel="stylesheet" href="{~conf.load.cdncss.fontawesome}" />
 		<link data-name="bootstrap" rel="stylesheet" href="{~conf.load.cdncss.bootstrap}">
 
-		<script type="module" src="/vendor/akiyatkin/bugagashop/infra.js"></script>
+		<script type="module" src="/-bugagashop/infra.js"></script>
 	</head>
 	<body>
 		<link rel="stylesheet" href="/-collect/css">
