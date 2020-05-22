@@ -51,7 +51,7 @@
 	</div>
 {BODY:}
 	{Полоса}
-	<div class="hat shadow-sm">
+	<header class="hat shadow-sm">
 		<style>
 			.hat {
 				border-top:5px solid var(--main); 
@@ -100,7 +100,7 @@
 				bars.dispatchEvent(click);
 			});
 		</script>
-	</div>
+	</header>
 	<header class="container py-3">
 		<div class="d-lg-flex justify-content-between align-items-center">
 			<div class="mb-3 mb-lg-0 d-none d-md-block" id="MAINMENU1"></div>
@@ -244,7 +244,12 @@
 		{printvk:}<a href="{Вконтакт}"><i class="fab fa-vk fa-fw"></i></a>
 		{printinst:}<a href="{Инстаграм}"><i class="fab fa-instagram fa-fw"></i></a>
 {SUBSCRIBE:}
-	<form action="/-bugagashop/subscribe" method="post" class="d-flex flex-column flex-lg-row">
+	<form data-layerid="{id}"
+		data-autosave="{autosavename}"
+		data-goal="{goal}"
+		data-global="{global}"
+		data-recaptcha="subscribe" 
+		action="/-bugagashop/subscribe" method="post" class="form d-flex flex-column flex-lg-row">
 		<div class="flex-grow-1 d-flex order-lg-2 align-items-stretch">
 			<input placeholder="Email" class="form-control flex-grow-1" style="height:100%; border-radius:100px; padding-right:40px" name="email" type="email">
 			<input class="btn btn-secondary" style="margin-left:-30px;" value="Отправить" type="submit">
@@ -688,7 +693,10 @@
 		}
 	</style>
 {SLIDES:}
-	<div style="height:320px" id="mainslider" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+	<div style="height:320px" id="mainslider" class="carousel slide carousel-fade" 
+		data-pause="hover" 
+		data-ride="carousel" 
+		data-interval="5000">
 		{:SLIDEScss}	
 		<ol class="carousel-indicators justify-content-center">
 			{data.list::slidenum}
@@ -704,23 +712,16 @@
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="sr-only">Вперёд</span>
 		</a>
-		<script type="module">
-			import { CDN } from '/vendor/akiyatkin/load/CDN.js'
-			
-			let div = document.getElementById('mainslider');
-			div.addEventListener('click', async () => {
-				await CDN.js('popper');
-				await CDN.js('bootstrap');
-				$(div).carousel('pause');
-			});
-
-		</script>
 	</div>
+	<script type="module">
+		import { CDN } from '/vendor/akiyatkin/load/CDN.js'
+		CDN.fire('load','bootstrap')
+	</script>
 	{slidenum:}<li data-target="#mainslider" data-slide-to="{~sum(~key)}" class="{~first()?:active}"></li>
 	{slide:}
 		<div 
 			class="carousel-item px-5 pt-3 {~first()?:active} d-flex align-items-stretch flex-column justify-content-between" 
-			style="padding-bottom:50px; background-position:center; background-image: url('/-imager/?w=1992&h=800&crop=1&src=~auto/slides/{file}')">
+			style="padding-bottom:50px; background-position:center; background-image: url('/data/auto/slides/{file}')">
 			{src?:slidecaption}
 		</div>
 	{slidecaption:}

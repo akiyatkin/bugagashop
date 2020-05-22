@@ -5,6 +5,7 @@
 	"divcheck":true,
 	"showanimate":true,
 	"config":{
+		"clearlinkfilter":true,
 		"count":12,
 		"page":1
 	},

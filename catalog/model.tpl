@@ -106,6 +106,8 @@
 			<div class="py-2 px-3" style="
 				color:white; 
 				font-size:12px;
+				position: relative;
+    			z-index: 1;
 				text-transform: uppercase;
 				background-color: var(--main); 
 			">{Наличие}</div>
