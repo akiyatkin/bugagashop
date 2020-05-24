@@ -229,7 +229,7 @@
 						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>{:SUBSALE}</b>.
 					</div>
 					{(Вконтакт|Инстаграм)?:printsoc}
-					<div style="width:100%" class="order-md-3 flex-grow-1 d-flex align-items-center justify-content-center">
+					<div style="width:100%" class="mt-2 order-md-3 flex-grow-1 d-flex align-items-center justify-content-center">
 						<div id="SUBSCRIBE"></div>
 					</div>
 				</div>
@@ -237,7 +237,7 @@
 			</div>
 		</div>
 		{printsoc:}
-			<div class="soc pb-2 mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
+			<div class="soc mb-md-0 order-md-1 d-flex flex-md-column flex-lg-row text-center">
 				{Вконтакт?:printvk}
 				{Инстаграм?:printinst}
 			</div>
@@ -260,13 +260,6 @@
 				<label style="color:var(--gray)" class="custom-control-label" for="checkbox{id}">{Политика}</label>
 			</div>
 		</div>
-		<script type="module">
-			let div = document.getElementById('{div}')
-			let cls = cls => div.getElementsByClassName(cls)[0]
-			let tag = tag => div.getElementsByTagName(tag)[0]
-			let form = tag('form')
-			form.onsubmit = async e => e.preventDefault()
-		</script>
 	</form>
 	{config.ans.msg?:showmsg}
 	{showmsg:}
@@ -512,55 +505,9 @@
 			<section id="ACTIONS"></section>
 			<div id="more"></div>
 			<div class="text-center">
-				<span id="morebtn" class="btn btn-outline-danger">Показать ещё</span>
+				<a href="/catalog" class="btn btn-outline-danger">Перейти в каталог</a>
 			</div>
-			<script type="module">
-				import { Crumb } from '/vendor/infrajs/controller/src/Crumb.js'
-				import { Event } from '/vendor/infrajs/event/Event.js'
-				
-				let btn = document.getElementById('morebtn');
-				let p = 0;
-				btn.addEventListener('click', async () => {
-					if (btn.classList.contains('active')) {
-						Crumb.go('/catalog');
-						return;
-					}
-					p++;
-					
-					let id = 'ACTIONS';
-					if (p != 1) {
-						let div = document.getElementById('more');
-						let n = document.createElement('div');
-						id = 'addmore'+p;
-						n.id = id;
-						div.appendChild(n);
-					}
-					let count = 24;
-					let layer = {
-						"div":id,
-						"divparent":"CONTENT",
-						"istpl":"{:q1}~sum(counter,:-1){:q2}",
-						"config":{
-							"page":p,
-							"count":count
-						},
-						"external":"-bugagashop/actions.layer.json"
-					};
-					Event.one('Layer.onshow', () => {
-						let data = Load.loadJSON(layer.json);
-						if (data.count < count) {
-							btn.innerHTML = "Перейти в каталог";
-							btn.classList.add('active');
-						}
-					}, '', layer);
-					let Controller = (await import('/vendor/infrajs/controller/src/Controller.js')).Controller
-					Controller.checkAdd(layer);
-					Controller.check();
-				});
-			</script>
 		</div>
-		{q1:}{
-		{q2:}}
 {NEWS:}
 	<style>
 		#{div} .link {
