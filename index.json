@@ -3,19 +3,6 @@
 	"seojsontpl":"-seo/?path={crumb.query}",
 	"data":true,
 	"tpl":"-bugagashop/index.tpl",
-	"divs2":{
-		"BODY":{
-			"data":true,
-			"tpl":["asdf{counter}<div id='CONTENT'></div>"],
-			"divs":{
-				"CONTENT":{
-					"parsedtpl2":"{counter}",
-					"data":true,
-					"tpl":["CONTENT{counter}"]
-				}
-			}
-		}
-	},
 	"divs":{
 		"BODY":{
 			"json":"-excel/get/group/Главная/?src=~auto/pages/Параметры.xlsx",
@@ -44,6 +31,23 @@
 					"tpl":"-bugagashop/layout.tpl",
 					"autosavename":"catalog"
 				},
+				
+				"MAINMENU1":{
+					"json":"-menu",
+					"tpl":"-bugagashop/layout.tpl",
+					"tplroot":"MAINMENU"
+				},
+				"MAINMENU2":{
+					"json":"-menu",
+					"tpl":"-bugagashop/layout.tpl",
+					"tplroot":"MAINMENU"
+				},
+				"CONTENT":[{
+					"external":"-bugagashop/index-main.json"					
+				},{
+					"deep":1,
+					"external":"-bugagashop/index-page.json"
+				}],
 				"COUNTER":{
 					"tpl":"~counters.tpl"
 				},
@@ -61,23 +65,7 @@
 					"tplroot":"FOOTMENU",
 					"tpl":"-bugagashop/layout.tpl",
 					"json":"-excel/get/group/Услуги/?src=~auto/pages/Параметры.xlsx"
-				},
-				"MAINMENU1":{
-					"json":"-menu",
-					"tpl":"-bugagashop/layout.tpl",
-					"tplroot":"MAINMENU"
-				},
-				"MAINMENU2":{
-					"json":"-menu",
-					"tpl":"-bugagashop/layout.tpl",
-					"tplroot":"MAINMENU"
-				},
-				"CONTENT":[{
-					"external":"-bugagashop/index-main.json"					
-				},{
-					"deep":1,
-					"external":"-bugagashop/index-page.json"
-				}]
+				}
 			}
 		}
 	},

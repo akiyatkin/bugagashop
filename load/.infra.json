@@ -3,7 +3,9 @@
 		"magnific-popup":["jquery"],
 		"popper":["jquery"],
 		"bootstrap":["jquery","popper"],
-		"jquery.autocomplete":["jquery"]
+		"jquery.autocomplete":["jquery"],
+		"jquery.maskedinput":["jquery"],
+		"jquery.waypoints":["jquery"]
 	},
 	"cdnjs":{
 		"cdek.widget":"//widget.cdek.ru/widget/widjet.js",
