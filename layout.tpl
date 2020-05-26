@@ -292,7 +292,7 @@
 		<div class="text-truncate"><i class="fas fa-user fa-fw"></i> <a href="/user/signin?back=ref">Личный кабинет</a></div>
 	{muser2:}
 		<div class="text-truncate"><i class="fas fa-user fa-fw"></i>
-			<a href="/user">{data.user.email}</a></div>
+			<a href="/cart">{data.user.email}</a></div>
 	{bempty:}
 	{bhas:}
 		<div class="ml-3 text-nowrap">
