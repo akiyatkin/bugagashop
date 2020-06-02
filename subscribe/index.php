@@ -4,16 +4,19 @@ use infrajs\mail\Mail;
 use infrajs\template\Template;
 use infrajs\path\Path;
 use infrajs\user\User;
-
+use akiyatkin\recaptcha\reCAPTCHA;
 
 $ans = [];
+
+$r = reCAPTCHA::check();
+if (!$r) return Ans::err($ans,'Ошибка, не пройдена проверка антибот.');
+
 $email = Ans::REQ('email');
 $is_email = Mail::check($email);
 if ($is_email != true) return Ans::err($ans, 'Некорректный адрес электронной почты!');
 
 $terms = Ans::REQ('terms');
 if (!$terms) return Ans::err($ans, 'Требуется согласие на обработку персональных данных!');
-
 
 
 
