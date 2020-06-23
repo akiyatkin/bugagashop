@@ -19,7 +19,7 @@
 		</a>
 		<div class="d-flex text border-0 flex-grow-1 align-items-center justify-content-center">
 			<a class="text-nowrap d-none d-sm-block d-md-none" 
-				href="tel:{Номер}"><i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
+				href="tel:{Телефон}"><i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
 			</a>
 		</div>
 		<div class="d-none d-md-flex align-items-stretch" style="min-width: 0">
@@ -27,7 +27,7 @@
 				<div class="text-muted pr-3 mr-3 text-truncate d-none d-xl-block" style="border-right:1px solid var(--gray);">
 					{Слоган}
 				</div>
-				<a class="text-nowrap" href="tel:{Номер}">
+				<a class="text-nowrap" href="tel:{Телефон}">
 					<i class="fas fa-phone-alt"></i>&nbsp;{Телефон}
 				</a>
 			</div>
@@ -138,6 +138,7 @@
 				color:var(--main);
 			}
 		</style>
+		
 		{:SUBROW}
 		<div class="container py-3 footmenu">
 			<div class="row">
@@ -150,9 +151,10 @@
 					<div class="mb-1 d-flex align-items-center">
 						<div class="mr-1 red"><i class="fas fa-phone-alt fa-fw"></i></div>
 						<div class="flex-grow-1 text-nowrap">
-							<a href="tel:{Номер}">{Телефон}</a>
+							<a href="tel:{~tel(Телефон)}">{Телефон}</a>
 						</div>
 					</div>
+					{Whatsapp:showphone}
 					<div class="mb-1 d-flex align-items-center">
 						<div class="mr-1 red"><i class="fas fa-envelope fa-fw"></i></div>
 						<div class="flex-grow-1">
@@ -193,6 +195,13 @@
 
 		</div>
 	</footer>
+		{showphone:}
+			<div class="mb-1 d-flex align-items-center">
+				<div class="mr-1 red"><i style2="color:#25D366;" class="fab fa-whatsapp fa-fw"></i></div>
+				<div class="flex-grow-1 text-nowrap">
+					<a href="whatsapp://send?phone={~tel(.)}">{.}</a>
+				</div>
+			</div>
 	{footaddr:}
 		<div class="mb-1 d-flex align-items-center">
 			<div class="mr-1 red"><i class="fas fa-map-marker-alt fa-fw"></i></div>

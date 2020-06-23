@@ -49,6 +49,36 @@
 						"tplroot":"page",
 						"data":true,
 						"external":"-contacts/contacts.layer.json"
+					},
+					
+					"contacts":{
+						"tpl":["<div id='rubricstitle'></div><div id='rubricscontent'></div><div id='rubricsgallery'></div>"],
+						"divs":{
+							"rubricstitle":{
+								"tpl":"-rubrics/rubrics.tpl",
+								"tplroot":"PAGESTITLE",
+								"jsontpl":"-rubrics/?type={Config.get(:rubrics).main}&id={crumb.name}"
+							},
+							"rubricscontent":{
+								"tpl":"-rubrics/rubrics.tpl",
+								"tplroot":"404",
+								"parsedtpl":"{crumb.name}",
+								"showanimate":true,
+								"layers":{
+									"json":"-excel/get/group/Главная/?src=~auto/pages/Параметры.xlsx",
+									"dataroot":"data.data.descr",
+									"autosavename":"orders.my",
+									"seojsontpl":"~{Config.get(:rubrics).main}/{crumb.name}.json",
+									"istpl":"{infrajs.names.rubrics.childs[crumb.name]??:yes}",
+									"tplcheck":true,
+									"tpltpl":"-rubrics/?type={Config.get(:rubrics).main}&id={crumb.name}&show"
+								}
+							},
+							"rubricsgallery":{
+								"tpl":"-rubrics/gallery.tpl",
+								"jsontpl":"-rubrics/?type={Config.get(:rubrics).main}&gallery&id={crumb.name}"
+							}
+						}
 					}
 				}
 			},{
