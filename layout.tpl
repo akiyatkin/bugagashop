@@ -234,7 +234,7 @@
 			<div class="py-4 py-md-3 px-3 px-sm-5 dark radius-pill radius-md-0" style="color:white; background-color: var(--main)">
 				<div class="d-flex flex-column flex-md-row align-items-center">
 					
-					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left mb-sm-3">
+					<div class="title order-md-2 text-uppercase px-3 text-center text-md-left mb-3">
 						Подпишитесь на <abbr title="Рассылка не чаще 1 раза в 3 месяца">новости</abbr> и&nbsp;получите купон со&nbsp;скидкой до&nbsp;<b>{:SUBSALE}</b>.
 					</div>
 					{(Вконтакт|Инстаграм)?:printsoc}

@@ -345,13 +345,14 @@ form {
 
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
-    border-color: var(--primary);
+	border-color: var(--primary); 
+	border-color: white; 
     background-color: var(--primary);
 }
 
 .form-inline .custom-select, .form-inline .input-group {
-			    width: auto;
-			}
+	width: auto;
+}
 .nav-pills .nav-link {
 	border-radius: 0;
 }
