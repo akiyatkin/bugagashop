@@ -155,6 +155,7 @@
 						</div>
 					</div>
 					{Whatsapp:showphone}
+					{Инстаграм:showinsta}
 					<div class="mb-1 d-flex align-items-center">
 						<div class="mr-1 red"><i class="fas fa-envelope fa-fw"></i></div>
 						<div class="flex-grow-1">
@@ -195,6 +196,13 @@
 
 		</div>
 	</footer>
+		{showinsta:}
+			<div class="mb-1 d-flex align-items-center">
+				<div class="mr-1 red"><i style2="color:#25D366;" class="fab fa-instagram fa-fw"></i></div>
+				<div class="flex-grow-1 text-nowrap">
+					<a href="{.}">{.}</a>
+				</div>
+			</div>
 		{showphone:}
 			<div class="mb-1 d-flex align-items-center">
 				<div class="mr-1 red"><i style2="color:#25D366;" class="fab fa-whatsapp fa-fw"></i></div>
