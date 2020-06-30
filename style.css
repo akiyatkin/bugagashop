@@ -314,6 +314,9 @@ form {
 	border:1px var(--warning) solid;
 }
 
+.btn-success {
+	border-color:white;
+}
 /*.btn-success {
 	background-color:var(--black);
 	opacity:1;
