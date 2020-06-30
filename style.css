@@ -314,7 +314,7 @@ form {
 	border:1px var(--warning) solid;
 }
 
-.btn-success {
+/*.btn-success {
 	background-color:var(--black);
 	opacity:1;
 	color:white;
@@ -329,7 +329,7 @@ form {
 	opacity: 1;
 	border:1px var(--danger) solid;
 	border-color:white;
-}
+}*/
 
 /*.btn-success {
 	background-color:var(--primary);

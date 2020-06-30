@@ -136,6 +136,7 @@
 			}
 			footer .red {
 				color:var(--main);
+				font-size: 17px;
 			}
 		</style>
 		
@@ -198,7 +199,7 @@
 	</footer>
 		{showinsta:}
 			<div class="mb-1 d-flex align-items-center">
-				<div class="mr-1 red"><i style2="color:#25D366;" class="fab fa-instagram fa-fw"></i></div>
+				<div class="mr-1 red"><i class="fab fa-instagram fa-fw"></i></div>
 				<div class="flex-grow-1 text-nowrap">
 					<a href="{.}">{.}</a>
 				</div>
