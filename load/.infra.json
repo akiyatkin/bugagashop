@@ -8,20 +8,22 @@
 		"jquery.waypoints":["jquery"]
 	},
 	"cdnjs":{
-		"cdek.widget":"//widget.cdek.ru/widget/widjet.js",
-		"jquery":"//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
-		"bootstrap":"//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
-		"magnific-popup":"//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js",
-		"popper":"//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
-		"jquery.autocomplete":"//cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.3.0/jquery.autocomplete.min.js",
-		"nouislider":"//cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.1.0/nouislider.min.js",
-		"jquery.maskedinput":"//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"
+		"cdek.widget":"https://widget.cdek.ru/widget/widjet.js",
+		"nouislider":"https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.1.0/nouislider.min.js",
+		"jquery.waypoints":"https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js",
+		"jquery":"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
+		"bootstrap":"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+		"magnific-popup":"https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js",
+		"popper":"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+		"jquery.autocomplete":"https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.10/jquery.autocomplete.min.js",
+		"jquery.maskedinput":"https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"
+
 	},
 	"cdncss":{
-		"nouislider":"//cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.1.0/nouislider.min.css",
-		"animate":"//cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css",
-		"bootstrap":"//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
-		"fontawesome":"//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css",
-		"magnific-popup":"//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+		"nouislider":"https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.1.0/nouislider.min.css",
+		"animate":"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css",
+		"bootstrap":"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+		"fontawesome":"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css",
+		"magnific-popup":"https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
 	}
 }
