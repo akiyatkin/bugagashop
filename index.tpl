@@ -27,7 +27,7 @@
 		<script type="module" src="/-bugagashop/infra.js"></script>
 	</head>
 	<body>
-		<link rel="stylesheet" href="/-collect/css">
+		<link rel="stylesheet" href="/-collect/all.css">
 		<div id="BODY"></div>
 	</body>
 </html>

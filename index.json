@@ -16,15 +16,15 @@
 					"onlyclient":true,
 					"tplroot":"USERMENU1",
 					"global":["user","cart"],
-					"json":"-cart/?type=order&id="
+					"jsontpl":"-cart/api/mystat?token={User.token()}&lang={Cart.lang()}&place=orders&order_id"
 				},
 				"USERMENU2":{
 					"tpl":"-bugagashop/layout.tpl",
 					"activelink":true,
 					"onlyclient":true,
 					"tplroot":"USERMENU2",
-					"global":["user","cart"],
-					"json":"-cart/?type=order&id="
+					"global":["user","cart"],					
+					"jsontpl":"-cart/api/mystat?token={User.token()}&lang={Cart.lang()}&place=orders&order_id"
 				},
 				"SEARCHFORM":{
 					"tplroot":"SEARCHFORM",
@@ -54,7 +54,7 @@
 				"FOOTGROUPS":{
 					"tplroot":"FOOTGROUPS",
 					"tpl":"-bugagashop/layout.tpl",
-					"json":"-showcase/api/groups"
+					"json":"-showcase/api2/groups"
 				},
 				"FOOTINFO":{
 					"tplroot":"FOOTMENU",

@@ -67,7 +67,7 @@
 				opacity: 0;
 				position: absolute;
 				width:100%;
-				background-color: rgba(255,255,255,0.9)
+				background-color: rgba(255,255,255,1)
 			}
 			.hat .mobilemenu.show {
 				visibility: visible;
@@ -304,7 +304,7 @@
 {USERMENU1:}
 		<div class="pl-3 d-flex" style="min-width: 0">
 			{data.user.email?:muser2?:mguest2}
-			{data.order.count?:bhas?:bempty}
+			{data.count?:bhas?:bempty}
 		</div>
 	{mguest2:}
 		<div class="text-truncate"><i class="fas fa-user fa-fw"></i> <a href="/user/signin?back=ref">Личный кабинет</a></div>
@@ -314,7 +314,7 @@
 	{bempty:}
 	{bhas:}
 		<div class="ml-3 text-nowrap">
-			<a href="/cart/orders/my/list" style="color:inherit; text-decoration: none"><b class="mr-2">{data.order.count} <i class="fas fa-cart-arrow-down"></i></b></a> <a href="/cart/orders/my/list"><b>{~cost(data.order.total)} руб.</b></a>
+			<a href="/cart/orders/my/list" style="color:inherit; text-decoration: none"><b class="mr-2">{data.count} <i class="fas fa-cart-arrow-down"></i></b></a> <a href="/cart/orders/my/list"><b>{~cost(data.sum)} руб.</b></a>
 		</div>
 {USERMENU2:}
  	<div class="d-flex justify-content-between" style="min-width: 0">

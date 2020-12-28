@@ -2,7 +2,7 @@
 	"divs":{
 		"MAINFILTERS":{
 			"external":"-catalog/filters.layer.json",
-			"jsontpl":"-showcase/api/filters?val=&m={~encode(Crumb.get.m)}",
+			"jsontpl":"-showcase/api2/filters?val=&m={~encode(Crumb.get.m)}",
 			"tpl":"-catalog/filters.tpl"
 		}
 	}

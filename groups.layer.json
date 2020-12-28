@@ -7,7 +7,7 @@
 			"tplroot":"GROUPS",
 			"activelink":true,
 			"tpl":"-catalog/groups/layout.tpl",
-			"jsontpl":"-showcase/api/groups?val={crumb.child=Controller.names.catalog.crumb?~encode(crumb.child.child.name)}&m={~encode(Crumb.get.m)}&art={~encode(crumb.child.child.child.name)}"
+			"jsontpl":"-showcase/api2/groups?val={crumb.child=Controller.names.catalog.crumb?~encode(crumb.child.child.name)}&m={~encode(Crumb.get.m)}&art={~encode(crumb.child.child.child.name)}"
 		}
 	}
 }

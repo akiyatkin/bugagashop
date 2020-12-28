@@ -1,6 +1,7 @@
 {
 	"global":"user",
 	"jsontpl":"-showcase/api/search/?val=actions&p={config.page}&count={config.count}",
+	"jsontpl":"-showcase/api2/actions",
 	"tpl":"-catalog/model.tpl",
 	"divcheck":true,
 	"showanimate":true,

@@ -37,10 +37,10 @@
 						}
 					},
 					"user":{
-						"external":"-user/user.layer.json"
+						"external":"-user/layer.json"
 					},
 					"cart":{
-						"external":"-cart/cart.layer.json"
+						"external":"-cart/layer.json"
 					},
 					"catalog":[{
 						"external":"-catalog/catalog.layer.json"

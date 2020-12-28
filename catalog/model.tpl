@@ -138,14 +138,30 @@
 		<div class="d-flex justify-content-between align-items-end"><b class="cost {Наличие=:strАкция?:strred}">{~cost(Цена)}{:unit}</b>&nbsp;{Старая цена:oldcost}</div>
 		{oldcost:}<span class="text-muted" title="Старая цена"><s>{~cost(.)}{:unit}</s></span>
 {CARDS-basket:}
+	<style>
+		#{div} .cart-basket {
+			background-color:var(--black); text-align:center
+		}
+	</style>
+	{Цена?:basket}
+	
+{CARDS-basket*:}
 	<div style="background-color:var(--black); text-align:center" class="cart-basket">
 		{min?(show?:showonecost?:showitemscost)?(~length(items)?:showitemonecost?(Цена?:showonecost?:shownocost))}
 	</div>
 	{showonecost:}
 		<input type="number" value="1" min="0" max="999" class="form-control" style="width:4em">
-		<div title="Купить {producer} {article} {item}"  class="d-flex {~conf.cart.clsadd} border-0 align-items-center justify-content-center add button" data-producer="{producer_nick}" data-article="{article_nick}" data-id="{item_nick}{catkit:ampval}">
-			{~conf.cart.textadd}
+
+		<div title="Купить {producer} {article} {item}" 
+			class="d-flex btn-success border-0 align-items-center justify-content-center add button" 
+			data-producer_nick="{producer_nick}" 
+			data-article_nick="{article_nick}" 
+			data-item_num="{item_num}"
+			data-catkit="{catkit:ampval}"
+			data-order_id="active">
+			В корзину
 		</div>
+
 		<div href="/cart/orders/my/list" class="ico d-flex align-items-stretch justify-content-center" style="font-size:24px; width:60px">
 			<div class="d-flex align-items-center">
 				<i class="fas fa-shopping-cart"></i>
